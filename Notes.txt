@@ -5,6 +5,6 @@ When update the version of Pygments, be sure to check that the Install Pygments
 and Install Style phases of the QLColorCode target still work properly.
 
 TODO:
-*   Write a thumbnailer similar to the Xcode one.
+*   Write a thumbnailer as well.  (See sample code on quicklook-dev)
 *   A strategy for generating UTIs for file types we can handle
 *   Some kind of style configuration interface.  Pref pane?  Helper app?
