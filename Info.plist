@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>QLGenerator</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.source-code</string>
+				<string>public.xml</string>
+                <string>org.ocaml.ocaml-source</string>
+                <string>com.apple.property-list</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+        <string>org.n8gray.qlcolorcode</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleVersion</key>
+	<string>0.2</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1</string>
+	<key>CFPlugInDynamicRegisterFunction</key>
+	<string></string>
+	<key>CFPlugInDynamicRegistration</key>
+	<string>NO</string>
+	<key>CFPlugInFactories</key>
+	<dict>
+		<key>C044543D-70A1-46D8-A908-4B8AEA1197A4</key>
+		<string>QuickLookGeneratorPluginFactory</string>
+	</dict>
+	<key>CFPlugInTypes</key>
+	<dict>
+		<key>5E2D9680-5022-40FA-B806-43349622E5B9</key>
+		<array>
+			<string>C044543D-70A1-46D8-A908-4B8AEA1197A4</string>
+		</array>
+	</dict>
+	<key>CFPlugInUnloadFunction</key>
+	<string></string>
+    <!-- Change following property to <true/> if the generators supports
+         multiple concurrent requests -->
+    <key>QLSupportsConcurrentRequests</key>
+    <true/>
+    <!-- Change following property to <true/> if the generators needs
+         to be run on main thread -->
+    <key>QLNeedsToBeRunInMainThread</key>
+    <false/>
+    <!-- Change following property to indicate the minimum useful size for a thumbnail the generator
+     can produce. If your generator is fast enough, you can remove the minimum size so to appear in lists -->
+    <key>QLThumbnailMinimumSize</key>
+    <real>48</real>
+    <!-- Change following properites to indicate the preview size to use if preview generation takes too long -->
+    <key>QLPreviewWidth</key>
+    <real>800</real>
+    <key>QLPreviewHeight</key>
+    <real>800</real>
+    
+    <!-- For this plugin to be invoked, Launch Services has to understand that 
+         a given file is "source-code".  For things like .c and .m files that's
+         not a problem; they're in the system already.  But for .ml files 
+         we have to inform the system ourselves.  If there is a file type that
+         is supported by pygments but this plugin is not being called to 
+         quicklook it, try adding a type identifier for it below. -->
+    <key>UTImportedTypeDeclarations</key>
+        <array>
+            <dict>
+                <key>UTTypeIdentifier</key>
+                <string>org.ocaml.ocaml-source</string>
+                <key>UTTypeReferenceURL</key>
+                <string>http://www.ocaml.org/</string>
+                <key>UTTypeDescription</key>
+                <string>OCaml Source File</string>
+                <key>UTTypeConformsTo</key>
+                <array>
+                    <string>public.source-code</string>
+                </array>
+                <key>UTTypeTagSpecification</key>
+                <dict>
+                    <key>public.filename-extension</key>
+                    <array>
+                        <string>ml</string>
+                    </array>
+                </dict>
+            </dict>
+            <dict>
+                <key>UTTypeIdentifier</key>
+                <string>org.ocaml.ocaml-interface</string>
+                <key>UTTypeReferenceURL</key>
+                <string>http://www.ocaml.org/</string>
+                <key>UTTypeDescription</key>
+                <string>OCaml Interface File</string>
+                <key>UTTypeConformsTo</key>
+                <array>
+                    <string>public.source-code</string>
+                </array>
+                <key>UTTypeTagSpecification</key>
+                <dict>
+                    <key>public.filename-extension</key>
+                    <array>
+                        <string>mli</string>
+                    </array>
+                </dict>
+            </dict>
+            <dict>
+                <key>UTTypeIdentifier</key>
+                <string>org.haskell.haskell-source</string>
+                <key>UTTypeReferenceURL</key>
+                <string>http://www.haskell.org/</string>
+                <key>UTTypeDescription</key>
+                <string>Haskell Source File</string>
+                <key>UTTypeConformsTo</key>
+                <array>
+                    <string>public.source-code</string>
+                </array>
+                <key>UTTypeTagSpecification</key>
+                <dict>
+                    <key>public.filename-extension</key>
+                    <array>
+                        <string>hs</string>
+                    </array>
+                </dict>
+            </dict>
+            <dict>
+                <key>UTTypeIdentifier</key>
+                <string>org.haskell.literate-haskell-source</string>
+                <key>UTTypeReferenceURL</key>
+                <string>http://www.haskell.org/</string>
+                <key>UTTypeDescription</key>
+                <string>Literate Haskell Source File</string>
+                <key>UTTypeConformsTo</key>
+                <array>
+                    <string>public.source-code</string>
+                </array>
+                <key>UTTypeTagSpecification</key>
+                <dict>
+                    <key>public.filename-extension</key>
+                    <array>
+                        <string>lhs</string>
+                    </array>
+                </dict>
+            </dict>
+            <dict>
+                <key>UTTypeIdentifier</key>
+                <string>org.n8gray.tex-source</string>
+                <key>UTTypeDescription</key>
+                <string>Tex Source File</string>
+                <key>UTTypeConformsTo</key>
+                <array>
+                    <string>public.source-code</string>
+                </array>
+                <key>UTTypeTagSpecification</key>
+                <dict>
+                    <key>public.filename-extension</key>
+                    <array>
+                        <string>tex</string>
+                        <string>sty</string>
+                    </array>
+                </dict>
+            </dict>
+            <dict>
+                <key>UTTypeIdentifier</key>
+                <string>org.n8gray.scheme-source</string>
+                <key>UTTypeDescription</key>
+                <string>scheme Source File</string>
+                <key>UTTypeConformsTo</key>
+                <array>
+                    <string>public.source-code</string>
+                </array>
+                <key>UTTypeTagSpecification</key>
+                <dict>
+                    <key>public.filename-extension</key>
+                    <array>
+                        <string>scm</string>
+                    </array>
+                </dict>
+            </dict>
+            <dict>
+                <key>UTTypeIdentifier</key>
+                <string>org.n8gray.ini-source</string>
+                <key>UTTypeDescription</key>
+                <string>.ini Source File</string>
+                <key>UTTypeConformsTo</key>
+                <array>
+                    <string>public.source-code</string>
+                </array>
+                <key>UTTypeTagSpecification</key>
+                <dict>
+                    <key>public.filename-extension</key>
+                    <array>
+                        <string>ini</string>
+                    </array>
+                    <key>public.mime-type</key>
+                    <string>text/x-ini</string>
+                </dict>
+            </dict>
+        </array>
+</dict>
+</plist>

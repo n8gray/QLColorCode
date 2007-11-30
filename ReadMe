@@ -1,0 +1,5 @@
+To build from source, you need the Pygments library.  Download the .tar.gz
+version of the source and uncompress it somewhere, then make a symbolic link
+to that location from ./pygments-src
+
+After that you should be able to build as usual from Xcode.
