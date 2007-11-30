@@ -1,5 +1,6 @@
 QLColorCode
 ===========
+<http://code.google.com/p/qlcolorcode/>
 
 This is a Quick Look plugin that renders source code with syntax highlighting,
 using the Pygments library: <http://pygments.org>

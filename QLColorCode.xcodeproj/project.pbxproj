@@ -6,6 +6,21 @@
 	objectVersion = 44;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		0E0E34E90D0097020086C1E6 /* Package */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 0E0E34EC0D0097200086C1E6 /* Build configuration list for PBXAggregateTarget "Package" */;
+			buildPhases = (
+				0E0E34E80D0097020086C1E6 /* ShellScript */,
+			);
+			dependencies = (
+				0E0E34EE0D0097280086C1E6 /* PBXTargetDependency */,
+			);
+			name = Package;
+			productName = Package;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		0EC047970CFBDADF009C986E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC047960CFBDADF009C986E /* Foundation.framework */; };
 		0ECBBA6C0CFCA37500416538 /* QLColorCode.qlgenerator in Copy to Library */ = {isa = PBXBuildFile; fileRef = 8D576316048677EA00EA77CD /* QLColorCode.qlgenerator */; };
@@ -20,6 +35,16 @@
 		F28CFBFD0A3EC0AF000ABFF5 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28CFBFC0A3EC0AF000ABFF5 /* ApplicationServices.framework */; };
 		F28CFC030A3EC0C6000ABFF5 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28CFC020A3EC0C6000ABFF5 /* QuickLook.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E0E34ED0D0097280086C1E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D57630D048677EA00EA77CD /* QLColorCode */;
+			remoteInfo = QLColorCode;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		0ECBBA6F0CFCA39E00416538 /* Copy to Library */ = {
@@ -52,7 +77,7 @@
 		0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
 		0EC047960CFBDADF009C986E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		0EC047F20CFC000A009C986E /* Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes.txt; sourceTree = "<group>"; };
-		0ECBBB360CFCF98600416538 /* ReadMe */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe; sourceTree = "<group>"; };
+		0ECBBB360CFCF98600416538 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		0ECBBB5D0CFD447E00416538 /* colorize.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = colorize.sh; sourceTree = "<group>"; };
 		0ECBBCFC0CFE4AC100416538 /* nautumn.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = nautumn.py; sourceTree = "<group>"; };
 		2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
@@ -84,7 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				0EC047F20CFC000A009C986E /* Notes.txt */,
-				0ECBBB360CFCF98600416538 /* ReadMe */,
+				0ECBBB360CFCF98600416538 /* ReadMe.txt */,
 				08FB77AFFE84173DC02AAC07 /* Source */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* External Frameworks and Libraries */,
@@ -183,6 +208,7 @@
 			projectRoot = "";
 			targets = (
 				8D57630D048677EA00EA77CD /* QLColorCode */,
+				0E0E34E90D0097020086C1E6 /* Package */,
 			);
 		};
 /* End PBXProject section */
@@ -210,6 +236,19 @@
 /* End PBXRezBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0E0E34E80D0097020086C1E6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/zsh -x";
+			shellScript = "# shell script goes here\nif [ $BUILD_STYLE != \"Release\" ]; then\n   echo \"Error: Must use Release build style\"\n   exit 1\nfi\n\ncd $PROJECT_DIR\nmkdir -vp release\ncd release\npkgDir=QLColorCode-$CURRENT_PROJECT_VERSION\nrm -rf $pkgDir\nmkdir $pkgDir\ncp -rp $TARGET_BUILD_DIR/*.qlgenerator $pkgDir\ncp ../ReadMe.txt $pkgDir\ncp ../LICENSE.txt $pkgDir\ntar cvzf $pkgDir.tgz $pkgDir";
+		};
 		0EC048F20CFC103D009C986E /* Install Pygments */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -240,6 +279,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0E0E34EE0D0097280086C1E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D57630D048677EA00EA77CD /* QLColorCode */;
+			targetProxy = 0E0E34ED0D0097280086C1E6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		8D5B49A704867FD3000E48DA /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -252,6 +299,27 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0E0E34EA0D0097020086C1E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = Package;
+			};
+			name = Debug;
+		};
+		0E0E34EB0D0097020086C1E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = Package;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		2CA3261F0896AD4900168862 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -295,6 +363,7 @@
 		2CA326230896AD4900168862 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 0.1;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
@@ -309,6 +378,7 @@
 					ppc,
 					i386,
 				);
+				CURRENT_PROJECT_VERSION = 0.1;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
@@ -319,6 +389,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E0E34EC0D0097200086C1E6 /* Build configuration list for PBXAggregateTarget "Package" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E0E34EA0D0097020086C1E6 /* Debug */,
+				0E0E34EB0D0097020086C1E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2CA3261E0896AD4900168862 /* Build configuration list for PBXNativeTarget "QLColorCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

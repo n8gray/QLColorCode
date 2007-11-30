@@ -13,7 +13,6 @@
 			<array>
 				<string>public.source-code</string>
 				<string>public.xml</string>
-                <string>org.ocaml.ocaml-source</string>
                 <string>com.apple.property-list</string>
 			</array>
 		</dict>
@@ -29,9 +28,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleVersion</key>
-	<string>0.2</string>
+	<string>${CURRENT_PROJECT_VERSION}</string>
     <key>CFBundleShortVersionString</key>
-    <string>1</string>
+    <string>${CURRENT_PROJECT_VERSION}</string>
 	<key>CFPlugInDynamicRegisterFunction</key>
 	<string></string>
 	<key>CFPlugInDynamicRegistration</key>
