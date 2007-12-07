@@ -18,6 +18,9 @@ setopt err_exit
 
 rsrcDir=$1
 target=$2
+thumb=$3
+
+thumblines=50
 
 export PYTHONPATH=$rsrcDir/pygments
 pyg=$rsrcDir/pygments/pygmentize
@@ -31,12 +34,24 @@ font=Monaco
 
 case $target in
     *.plist )
+        if [ $thumb = "1" ]; then
+            pyg="head -n $thumblines | $pyg"
+        fi
         /usr/bin/plutil -convert xml1 -o - $target | $pyg -l xml $pygOpts \
             | sed "s/pre *{/pre { font-family: $font; /"
         ;;
-    * ) 
+    * )
+        if [ $thumb = "1" ]; then
+            #echo "making thumbnail: $thumb" >> ~/qlcc-debug.txt
+            tmpDir=`mktemp -d -t qlcolorcode-XXXXXX`
+            tgtBase="`basename $target`"
+            head -n $thumblines $target > $tmpDir/$tgtBase
+            target=$tmpDir/$tgtBase
+        fi
         $pyg $pygOpts $target \
-            | sed "s/pre *{/pre { font-family: $font; /"
-
+                | sed "s/pre *{/pre { font-family: $font; /"
+        if [ $thumb = "1" ]; then
+            rm -rf $tmpDir
+        fi
         ;;
 esac

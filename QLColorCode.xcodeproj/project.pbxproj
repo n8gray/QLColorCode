@@ -22,6 +22,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0E8776570D08E004005040B4 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E8776550D08E004005040B4 /* Common.h */; };
+		0E8776580D08E004005040B4 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8776560D08E004005040B4 /* Common.m */; };
+		0E8776B70D08ED64005040B4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8776B60D08ED64005040B4 /* WebKit.framework */; };
+		0E8776BD0D08EDA4005040B4 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8776BC0D08EDA4005040B4 /* AppKit.framework */; };
 		0EC047970CFBDADF009C986E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC047960CFBDADF009C986E /* Foundation.framework */; };
 		0ECBBA6C0CFCA37500416538 /* QLColorCode.qlgenerator in Copy to Library */ = {isa = PBXBuildFile; fileRef = 8D576316048677EA00EA77CD /* QLColorCode.qlgenerator */; };
 		0ECBBB5E0CFD447E00416538 /* colorize.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0ECBBB5D0CFD447E00416538 /* colorize.sh */; };
@@ -41,7 +45,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D57630D048677EA00EA77CD /* QLColorCode */;
+			remoteGlobalIDString = 8D57630D048677EA00EA77CD;
 			remoteInfo = QLColorCode;
 		};
 /* End PBXContainerItemProxy section */
@@ -75,6 +79,11 @@
 		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		08FB77B6FE84183AC02AAC07 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		0E51C65F0D04E492007853CB /* ChangeLog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChangeLog.txt; sourceTree = "<group>"; };
+		0E8776550D08E004005040B4 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		0E8776560D08E004005040B4 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		0E8776B60D08ED64005040B4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = SDKs/MacOSX10.5.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
+		0E8776BC0D08EDA4005040B4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = SDKs/MacOSX10.5.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
 		0EC047960CFBDADF009C986E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		0EC047F20CFC000A009C986E /* Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes.txt; sourceTree = "<group>"; };
 		0ECBBB360CFCF98600416538 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
@@ -99,6 +108,8 @@
 				F28CFBFD0A3EC0AF000ABFF5 /* ApplicationServices.framework in Frameworks */,
 				F28CFC030A3EC0C6000ABFF5 /* QuickLook.framework in Frameworks */,
 				0EC047970CFBDADF009C986E /* Foundation.framework in Frameworks */,
+				0E8776B70D08ED64005040B4 /* WebKit.framework in Frameworks */,
+				0E8776BD0D08EDA4005040B4 /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +121,7 @@
 			children = (
 				0EC047F20CFC000A009C986E /* Notes.txt */,
 				0ECBBB360CFCF98600416538 /* ReadMe.txt */,
+				0E51C65F0D04E492007853CB /* ChangeLog.txt */,
 				08FB77AFFE84173DC02AAC07 /* Source */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* External Frameworks and Libraries */,
@@ -121,6 +133,8 @@
 		089C1671FE841209C02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				0E8776BC0D08EDA4005040B4 /* AppKit.framework */,
+				0E8776B60D08ED64005040B4 /* WebKit.framework */,
 				0EC047960CFBDADF009C986E /* Foundation.framework */,
 				F28CFC020A3EC0C6000ABFF5 /* QuickLook.framework */,
 				F28CFBFC0A3EC0AF000ABFF5 /* ApplicationServices.framework */,
@@ -142,6 +156,8 @@
 		08FB77AFFE84173DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				0E8776550D08E004005040B4 /* Common.h */,
+				0E8776560D08E004005040B4 /* Common.m */,
 				61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.m */,
 				2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */,
 				08FB77B6FE84183AC02AAC07 /* main.c */,
@@ -166,6 +182,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E8776570D08E004005040B4 /* Common.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +197,6 @@
 				8D57630F048677EA00EA77CD /* Resources */,
 				8D576311048677EA00EA77CD /* Sources */,
 				8D576313048677EA00EA77CD /* Frameworks */,
-				8D576315048677EA00EA77CD /* Rez */,
 				0EC048F20CFC103D009C986E /* Install Pygments */,
 				0ECBBD060CFE4B1A00416538 /* Install Style */,
 				0ECBBA6F0CFCA39E00416538 /* Copy to Library */,
@@ -225,16 +241,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXRezBuildPhase section */
-		8D576315048677EA00EA77CD /* Rez */ = {
-			isa = PBXRezBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXRezBuildPhase section */
-
 /* Begin PBXShellScriptBuildPhase section */
 		0E0E34E80D0097020086C1E6 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -274,6 +280,7 @@
 				8D576312048677EA00EA77CD /* main.c in Sources */,
 				2C05A19C06CAA52B00D84F6F /* GeneratePreviewForURL.m in Sources */,
 				61E3BCFB0870B4F2002186A0 /* GenerateThumbnailForURL.m in Sources */,
+				0E8776580D08E004005040B4 /* Common.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +370,7 @@
 		2CA326230896AD4900168862 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 0.1;
+				CURRENT_PROJECT_VERSION = 0.2;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
@@ -378,7 +385,7 @@
 					ppc,
 					i386,
 				);
-				CURRENT_PROJECT_VERSION = 0.1;
+				CURRENT_PROJECT_VERSION = 0.2;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
