@@ -25,6 +25,7 @@ OSStatus GenerateThumbnailForURL(void *thisInterface,
     if (maxSize.width < minSize || maxSize.height < minSize)
         return noErr;
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NSDate *startDate = [NSDate date];
     
     // Render as though there is an 600x800 window, and fill the thumbnail 
     // vertically.  This code could be more general.  I'm assuming maxSize is
@@ -43,8 +44,11 @@ OSStatus GenerateThumbnailForURL(void *thisInterface,
     CFBundleRef bundle = QLThumbnailRequestGetGeneratorBundle(thumbnail);
     NSData *data = colorizeURL(bundle, url, &status, 1);
     //NSLog(@"%s", [data bytes]);
+    n8log(@"Generated thumbnail html page in %.3f sec", -[startDate timeIntervalSinceNow] );
     if (status != 0) {
+#ifndef DEBUG
         goto done;
+#endif
     }
     //NSRect previewRect;
     //previewRect.size = previewSize;
@@ -78,6 +82,7 @@ OSStatus GenerateThumbnailForURL(void *thisInterface,
         CFRelease(context);
     }
 done:
+    n8log(@"Finished thumbnail after %.3f sec\n\n", -[startDate timeIntervalSinceNow] );
     [pool release];
     return noErr;
 }

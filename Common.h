@@ -16,6 +16,6 @@
 #endif
 
 // Status is 0 on success, nonzero on error (like a shell command)
-// If thumbnail is 1, only render the top 50 lines of the file
+// If thumbnail is 1, only render enough of the file for a thumbnail
 NSData *colorizeURL(CFBundleRef myBundle, CFURLRef url, int *status,
                     int thumbnail);

@@ -65,12 +65,12 @@ NSData *colorizeURL(CFBundleRef bundle, CFURLRef url, int *status, int thumbnail
     else
         thumbString = "0";
     NSString *cmd = [NSString stringWithFormat:
-                     @"\"%s/colorize.sh\" \"%s\" \"%s\" %s", 
-                     rsrcDirBuf, rsrcDirBuf, targetBuf, thumbString];
+                     @"PYTHONPATH=\"%s:%s/pygments\" \"%s/colorize.py\" \"%s\" \"%s\" %s", 
+                     rsrcDirBuf, rsrcDirBuf, rsrcDirBuf, rsrcDirBuf, targetBuf, thumbString];
     
     output = runTask(cmd, status);
     if (*status != 0) {
-        NSLog(@"QLColorCode: colorize.sh failed with exit code %d", *status);
+        NSLog(@"QLColorCode: colorize.py failed with exit code %d", *status);
     }
 done:
     free(targetBuf);

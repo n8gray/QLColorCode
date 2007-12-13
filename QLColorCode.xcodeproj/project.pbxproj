@@ -26,10 +26,10 @@
 		0E8776580D08E004005040B4 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8776560D08E004005040B4 /* Common.m */; };
 		0E8776B70D08ED64005040B4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8776B60D08ED64005040B4 /* WebKit.framework */; };
 		0E8776BD0D08EDA4005040B4 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8776BC0D08EDA4005040B4 /* AppKit.framework */; };
+		0EA91CB70D0E746600F04340 /* colorize.py in Resources */ = {isa = PBXBuildFile; fileRef = 0EA91CB60D0E746600F04340 /* colorize.py */; };
 		0EC047970CFBDADF009C986E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC047960CFBDADF009C986E /* Foundation.framework */; };
 		0ECBBA6C0CFCA37500416538 /* QLColorCode.qlgenerator in Copy to Library */ = {isa = PBXBuildFile; fileRef = 8D576316048677EA00EA77CD /* QLColorCode.qlgenerator */; };
-		0ECBBB5E0CFD447E00416538 /* colorize.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0ECBBB5D0CFD447E00416538 /* colorize.sh */; };
-		0ECBBD090CFE4B9800416538 /* nautumn.py in Install Style */ = {isa = PBXBuildFile; fileRef = 0ECBBCFC0CFE4AC100416538 /* nautumn.py */; };
+		0ECBBD090CFE4B9800416538 /* nautumn.py in Resources */ = {isa = PBXBuildFile; fileRef = 0ECBBCFC0CFE4AC100416538 /* nautumn.py */; };
 		2C05A19C06CAA52B00D84F6F /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */; };
 		61E3BCFB0870B4F2002186A0 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.m */; };
 		8D576312048677EA00EA77CD /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 08FB77B6FE84183AC02AAC07 /* main.c */; settings = {ATTRIBUTES = (); }; };
@@ -62,17 +62,6 @@
 			name = "Copy to Library";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0ECBBD060CFE4B1A00416538 /* Install Style */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "pygments/Pygments-0.9-py2.5.egg/pygments/styles";
-			dstSubfolderSpec = 7;
-			files = (
-				0ECBBD090CFE4B9800416538 /* nautumn.py in Install Style */,
-			);
-			name = "Install Style";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +73,7 @@
 		0E8776560D08E004005040B4 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		0E8776B60D08ED64005040B4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = SDKs/MacOSX10.5.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		0E8776BC0D08EDA4005040B4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = SDKs/MacOSX10.5.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
+		0EA91CB60D0E746600F04340 /* colorize.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = colorize.py; sourceTree = "<group>"; };
 		0EC047960CFBDADF009C986E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		0EC047F20CFC000A009C986E /* Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes.txt; sourceTree = "<group>"; };
 		0ECBBB360CFCF98600416538 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
@@ -162,6 +152,7 @@
 				2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */,
 				08FB77B6FE84183AC02AAC07 /* main.c */,
 				0ECBBB5D0CFD447E00416538 /* colorize.sh */,
+				0EA91CB60D0E746600F04340 /* colorize.py */,
 				0ECBBCFC0CFE4AC100416538 /* nautumn.py */,
 			);
 			name = Source;
@@ -198,7 +189,6 @@
 				8D576311048677EA00EA77CD /* Sources */,
 				8D576313048677EA00EA77CD /* Frameworks */,
 				0EC048F20CFC103D009C986E /* Install Pygments */,
-				0ECBBD060CFE4B1A00416538 /* Install Style */,
 				0ECBBA6F0CFCA39E00416538 /* Copy to Library */,
 			);
 			buildRules = (
@@ -235,7 +225,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */,
-				0ECBBB5E0CFD447E00416538 /* colorize.sh in Resources */,
+				0EA91CB70D0E746600F04340 /* colorize.py in Resources */,
+				0ECBBD090CFE4B9800416538 /* nautumn.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +333,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
+				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_NAME = QLColorCode;
 				VALID_ARCHS = "i386 ppc";
 				WRAPPER_EXTENSION = qlgenerator;

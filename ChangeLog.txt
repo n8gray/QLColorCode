@@ -1,5 +1,6 @@
 0.2 (in progress):
+    - Added thumbnailing support
     - Changed .tex UTI to agree with TeXShop's.
-    - Let the system pick a different plugin if pygmentize fails
+    - (Try to) let the system pick a different plugin if pygmentize fails
 
 0.1: Initial release
