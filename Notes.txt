@@ -1,16 +1,20 @@
+Based on highlight: http://www.andre-simon.de/index.html
+(Was based on pygments: http://pygments.org)
 
-Based on pygments 0.9: http://pygments.org
-
-When update the version of Pygments, be sure to check that the Install Pygments
-and Install Style phases of the QLColorCode target still work properly.
+When installing a new version of highlight, make sure to update the 
+"highlight" symlink in the project dir.  Also patch with 
+highlight-2.6.6-getConfDir.diff if necessary.
 
 The version is handled in the Current Project Version variable in the project.
 
 TODO:
-*   Write a thumbnailer as well.  (See sample code on quicklook-dev)
 *   A strategy for generating UTIs for file types we can handle
 *   Some kind of style configuration interface.  Pref pane?  Helper app?
 
+The project is in $PROJECT_DIR
+
+The resources directory of a build is:
+    "$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH"
 
 Env. Vars available during builds:
     setenv ACTION build
@@ -20,36 +24,37 @@ Env. Vars available during builds:
     setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation
     setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library
     setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools
-    setenv ARCHS "ppc i386"
+    setenv ARCHS i386
     setenv BUILD_COMPONENTS "headers build"
     setenv BUILD_DIR /Users/n8gray/src/QLColorCode/build
     setenv BUILD_ROOT /Users/n8gray/src/QLColorCode/build
-    setenv BUILD_STYLE Release
+    setenv BUILD_STYLE Debug
     setenv BUILD_VARIANTS normal
-    setenv BUILT_PRODUCTS_DIR /Users/n8gray/src/QLColorCode/build/Release
+    setenv BUILT_PRODUCTS_DIR /Users/n8gray/src/QLColorCode/build/Debug
     setenv CACHE_ROOT /Library/Caches/com.apple.Xcode.504
     setenv CCHROOT /Library/Caches/com.apple.Xcode.504
     setenv CHMOD /bin/chmod
     setenv CHOWN /usr/sbin/chown
-    setenv CLASS_FILE_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Release/Package.build/JavaClasses
-    setenv CLEAN_PRECOMPS NO
+    setenv CLASS_FILE_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug/QLColorCode.build/JavaClasses
+    setenv CLEAN_PRECOMPS YES
     setenv COMMAND_MODE legacy
     setenv COMPOSITE_SDK_DIRS /Library/Caches/com.apple.Xcode.504/CompositeSDKs
-    setenv CONFIGURATION Release
-    setenv CONFIGURATION_BUILD_DIR /Users/n8gray/src/QLColorCode/build/Release
-    setenv CONFIGURATION_TEMP_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Release
-    setenv COPY_PHASE_STRIP YES
+    setenv CONFIGURATION Debug
+    setenv CONFIGURATION_BUILD_DIR /Users/n8gray/src/QLColorCode/build/Debug
+    setenv CONFIGURATION_TEMP_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug
+    setenv CONTENTS_FOLDER_PATH QLColorCode.qlgenerator/Contents
+    setenv COPY_PHASE_STRIP NO
     setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES
     setenv CP /bin/cp
     setenv CURRENT_ARCH i386
-    setenv CURRENT_PROJECT_VERSION 0.1
+    setenv CURRENT_PROJECT_VERSION 0.2
     setenv CURRENT_VARIANT normal
     setenv DEBUGGING_SYMBOLS YES
-    setenv DEBUG_INFORMATION_FORMAT dwarf-with-dsym
+    setenv DEBUG_INFORMATION_FORMAT dwarf
     setenv DEPLOYMENT_LOCATION NO
-    setenv DERIVED_FILES_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Release/Package.build/DerivedSources
-    setenv DERIVED_FILE_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Release/Package.build/DerivedSources
-    setenv DERIVED_SOURCES_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Release/Package.build/DerivedSources
+    setenv DERIVED_FILES_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug/QLColorCode.build/DerivedSources
+    setenv DERIVED_FILE_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug/QLColorCode.build/DerivedSources
+    setenv DERIVED_SOURCES_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug/QLColorCode.build/DerivedSources
     setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications
     setenv DEVELOPER_BIN_DIR /Developer/usr/bin
     setenv DEVELOPER_DIR /Developer
@@ -60,15 +65,29 @@ Env. Vars available during builds:
     setenv DEVELOPER_TOOLS_DIR /Developer/Tools
     setenv DEVELOPER_USR_DIR /Developer/usr
     setenv DEVELOPMENT_LANGUAGE English
+    setenv DOCUMENTATION_FOLDER_PATH /Documentation
     setenv DSTROOT /tmp/QLColorCode.dst
-    setenv DWARF_DSYM_FILE_NAME .dSYM
-    setenv DWARF_DSYM_FOLDER_PATH /Users/n8gray/src/QLColorCode/build/Release
+    setenv DWARF_DSYM_FILE_NAME QLColorCode.qlgenerator.dSYM
+    setenv DWARF_DSYM_FOLDER_PATH /Users/n8gray/src/QLColorCode/build/Debug
     setenv ENABLE_HEADER_DEPENDENCIES YES
     setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn *.xcodeproj *.xcode *.pbproj *.pbxproj"
-    setenv FIXED_FILES_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Release/Package.build/FixedFiles
+    setenv EXECUTABLES_FOLDER_PATH QLColorCode.qlgenerator/Contents/Executables
+    setenv EXECUTABLE_FOLDER_PATH QLColorCode.qlgenerator/Contents/MacOS
+    setenv EXECUTABLE_NAME QLColorCode
+    setenv EXECUTABLE_PATH QLColorCode.qlgenerator/Contents/MacOS/QLColorCode
+    setenv FIXED_FILES_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug/QLColorCode.build/FixedFiles
+    setenv FRAMEWORKS_FOLDER_PATH QLColorCode.qlgenerator/Contents/Frameworks
+    setenv FRAMEWORK_FLAG_PREFIX -framework
+    setenv FRAMEWORK_SEARCH_PATHS "/Users/n8gray/src/QLColorCode/build/Debug /Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks"
     setenv FRAMEWORK_VERSION A
-    setenv GCC_ENABLE_FIX_AND_CONTINUE NO
+    setenv FULL_PRODUCT_NAME QLColorCode.qlgenerator
+    setenv GCC_DYNAMIC_NO_PIC NO
+    setenv GCC_ENABLE_FIX_AND_CONTINUE YES
+    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES
+    setenv GCC_MODEL_TUNING G5
+    setenv GCC_OPTIMIZATION_LEVEL 0
     setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"
+    setenv GCC_PRECOMPILE_PREFIX_HEADER NO
     setenv GCC_TREAT_WARNINGS_AS_ERRORS NO
     setenv GCC_VERSION 4.0
     setenv GCC_WARN_ABOUT_RETURN_TYPE YES
@@ -81,17 +100,23 @@ Env. Vars available during builds:
     setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES
     setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES
     setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES
+    setenv HEADER_SEARCH_PATHS /Users/n8gray/src/QLColorCode/build/Debug/include
     setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES
-    setenv INSTALL_DIR /tmp/QLColorCode.dst
+    setenv INFOPLIST_FILE Info.plist
+    setenv INFOPLIST_PATH QLColorCode.qlgenerator/Contents/Info.plist
+    setenv INFOSTRINGS_PATH /InfoPlist.strings
+    setenv INSTALL_DIR /tmp/QLColorCode.dst/Library/QuickLook
     setenv INSTALL_GROUP staff
     setenv INSTALL_MODE_FLAG a-w,a+rX
     setenv INSTALL_OWNER n8gray
+    setenv INSTALL_PATH /Library/QuickLook
     setenv INSTALL_ROOT /tmp/QLColorCode.dst
     setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"
     setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub
     setenv JAVA_ARCHIVE_CLASSES YES
     setenv JAVA_ARCHIVE_TYPE JAR
     setenv JAVA_COMPILER /usr/bin/javac
+    setenv JAVA_FOLDER_PATH QLColorCode.qlgenerator/Contents/Resources/Java
     setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources
     setenv JAVA_JAR_FLAGS cv
     setenv JAVA_SOURCE_SUBDIR .
@@ -99,12 +124,15 @@ Env. Vars available during builds:
     setenv JAVA_ZIP_FLAGS -urg
     setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"
     setenv LEX /Developer/usr/bin/lex
-    setenv LINK_FILE_LIST_normal_i386 
-    setenv LINK_FILE_LIST_normal_ppc 
+    setenv LIBRARY_FLAG_NOSPACE YES
+    setenv LIBRARY_FLAG_PREFIX -l
+    setenv LIBRARY_SEARCH_PATHS /Users/n8gray/src/QLColorCode/build/Debug
+    setenv LINK_FILE_LIST_normal_i386 /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug/QLColorCode.build/Objects-normal/i386/QLColorCode.LinkFileList
     setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities
     setenv LOCAL_APPS_DIR /Applications
     setenv LOCAL_DEVELOPER_DIR /Library/Developer
     setenv LOCAL_LIBRARY_DIR /Library
+    setenv MACH_O_TYPE mh_bundle
     setenv MAC_OS_X_VERSION_ACTUAL 1051
     setenv MAC_OS_X_VERSION_MAJOR 1050
     setenv MAC_OS_X_VERSION_MINOR 0501
@@ -113,43 +141,57 @@ Env. Vars available during builds:
     setenv NATIVE_ARCH_64_BIT x86_64
     setenv NATIVE_ARCH_ACTUAL x86_64
     setenv NO_COMMON YES
-    setenv OBJECT_FILE_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Release/Package.build/Objects
-    setenv OBJECT_FILE_DIR_normal /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Release/Package.build/Objects-normal
+    setenv OBJECT_FILE_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug/QLColorCode.build/Objects
+    setenv OBJECT_FILE_DIR_normal /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug/QLColorCode.build/Objects-normal
     setenv OBJROOT /Users/n8gray/src/QLColorCode/build
     setenv OPTIMIZATION_LEVEL 0
     setenv OS MACOS
     setenv OSAC /usr/bin/osacompile
+    setenv OTHER_CFLAGS -DDEBUG
+    setenv OTHER_CPLUSPLUSFLAGS -DDEBUG
+    setenv PACKAGE_TYPE com.apple.package-type.wrapper
     setenv PASCAL_STRINGS YES
     setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers"
-    setenv PKGINFO_FILE_PATH /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Release/Package.build/PkgInfo
+    setenv PBDEVELOPMENTPLIST_PATH QLColorCode.qlgenerator/Contents/pbdevelopment.plist
+    setenv PFE_FILE_C_DIALECTS "c objective-c"
+    setenv PKGINFO_FILE_PATH /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug/QLColorCode.build/PkgInfo
+    setenv PKGINFO_PATH QLColorCode.qlgenerator/Contents/PkgInfo
+    setenv PLUGINS_FOLDER_PATH QLColorCode.qlgenerator/Contents/PlugIns
     setenv PREBINDING NO
-    setenv PRECOMP_DESTINATION_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Release/Package.build/PrefixHeaders
-    setenv PRODUCT_NAME Package
-    setenv PRODUCT_SETTINGS_PATH 
+    setenv PRECOMP_DESTINATION_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug/QLColorCode.build/PrefixHeaders
+    setenv PRIVATE_HEADERS_FOLDER_PATH QLColorCode.qlgenerator/Contents/PrivateHeaders
+    setenv PRODUCT_NAME QLColorCode
+    setenv PRODUCT_SETTINGS_PATH /Users/n8gray/src/QLColorCode/Info.plist
+    setenv PRODUCT_TYPE com.apple.product-type.bundle
     setenv PROJECT QLColorCode
     setenv PROJECT_DERIVED_FILE_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/DerivedSources
     setenv PROJECT_DIR /Users/n8gray/src/QLColorCode
     setenv PROJECT_FILE_PATH /Users/n8gray/src/QLColorCode/QLColorCode.xcodeproj
     setenv PROJECT_NAME QLColorCode
     setenv PROJECT_TEMP_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build
+    setenv PUBLIC_HEADERS_FOLDER_PATH QLColorCode.qlgenerator/Contents/Headers
     setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES
     setenv REMOVE_CVS_FROM_RESOURCES YES
     setenv REMOVE_SVN_FROM_RESOURCES YES
-    setenv REZ_COLLECTOR_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Release/Package.build/ResourceManagerResources
-    setenv REZ_OBJECTS_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Release/Package.build/ResourceManagerResources/Objects
+    setenv REZ_COLLECTOR_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug/QLColorCode.build/ResourceManagerResources
+    setenv REZ_OBJECTS_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug/QLColorCode.build/ResourceManagerResources/Objects
+    setenv REZ_SEARCH_PATHS /Users/n8gray/src/QLColorCode/build/Debug
+    setenv SCRIPTS_FOLDER_PATH QLColorCode.qlgenerator/Contents/Resources/Scripts
     setenv SCRIPT_INPUT_FILE_COUNT 0
     setenv SCRIPT_OUTPUT_FILE_COUNT 0
     setenv SDKROOT /Developer/SDKs/MacOSX10.5.sdk
     setenv SED /usr/bin/sed
     setenv SET_DIR_MODE_OWNER_GROUP YES
     setenv SET_FILE_MODE_OWNER_GROUP NO
-    setenv SHARED_DERIVED_FILE_DIR /Users/n8gray/src/QLColorCode/build/Release/DerivedSources
+    setenv SHARED_DERIVED_FILE_DIR /Users/n8gray/src/QLColorCode/build/Debug/DerivedSources
+    setenv SHARED_FRAMEWORKS_FOLDER_PATH QLColorCode.qlgenerator/Contents/SharedFrameworks
     setenv SHARED_PRECOMPS_DIR /Library/Caches/com.apple.Xcode.504/SharedPrecompiledHeaders
-    setenv SKIP_INSTALL YES
+    setenv SHARED_SUPPORT_FOLDER_PATH QLColorCode.qlgenerator/Contents/SharedSupport
     setenv SOURCE_ROOT /Users/n8gray/src/QLColorCode
     setenv SRCROOT /Users/n8gray/src/QLColorCode
     setenv STRIP_INSTALLED_PRODUCT YES
-    setenv SYMBOL_REPOSITORY_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Release/Package.build/SymbolRepositories
+    setenv STRIP_STYLE non-global
+    setenv SYMBOL_REPOSITORY_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug/QLColorCode.build/SymbolRepositories
     setenv SYMROOT /Users/n8gray/src/QLColorCode/build
     setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities
     setenv SYSTEM_APPS_DIR /Applications
@@ -171,25 +213,30 @@ Env. Vars available during builds:
     setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities
     setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation
     setenv SYSTEM_LIBRARY_DIR /System/Library
-    setenv TARGETNAME Package
-    setenv TARGET_BUILD_DIR /Users/n8gray/src/QLColorCode/build/Release
-    setenv TARGET_NAME Package
-    setenv TARGET_TEMP_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Release/Package.build
-    setenv TEMP_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Release/Package.build
-    setenv TEMP_FILES_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Release/Package.build
-    setenv TEMP_FILE_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Release/Package.build
+    setenv TARGETNAME QLColorCode
+    setenv TARGET_BUILD_DIR /Users/n8gray/src/QLColorCode/build/Debug
+    setenv TARGET_NAME QLColorCode
+    setenv TARGET_TEMP_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug/QLColorCode.build
+    setenv TEMP_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug/QLColorCode.build
+    setenv TEMP_FILES_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug/QLColorCode.build
+    setenv TEMP_FILE_DIR /Users/n8gray/src/QLColorCode/build/QLColorCode.build/Debug/QLColorCode.build
     setenv TEMP_ROOT /Users/n8gray/src/QLColorCode/build
     setenv UID 504
+    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH QLColorCode.qlgenerator/Contents/Resources
     setenv UNSTRIPPED_PRODUCT NO
     setenv USER n8gray
     setenv USER_APPS_DIR /Users/n8gray/Applications
     setenv USER_LIBRARY_DIR /Users/n8gray/Library
     setenv USE_DYNAMIC_NO_PIC YES
-    setenv VALID_ARCHS "ppc64 ppc7400 ppc970 i386 x86_64 ppc"
+    setenv VALID_ARCHS "i386 ppc"
     setenv VERBOSE_PBXCP NO
+    setenv VERSIONPLIST_PATH QLColorCode.qlgenerator/Contents/version.plist
     setenv VERSION_INFO_BUILDER n8gray
-    setenv VERSION_INFO_FILE Package_vers.c
-    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:Package  PROJECT:QLColorCode-0.1\""
+    setenv VERSION_INFO_FILE QLColorCode_vers.c
+    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:QLColorCode  PROJECT:QLColorCode-0.2\""
+    setenv WRAPPER_EXTENSION qlgenerator
+    setenv WRAPPER_NAME QLColorCode.qlgenerator
+    setenv WRAPPER_SUFFIX .qlgenerator
     setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode
     setenv XCODE_VERSION_ACTUAL 0300
     setenv XCODE_VERSION_MAJOR 0300

@@ -17,6 +17,7 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
                                CFURLRef url, CFStringRef contentTypeUTI, 
                                CFDictionaryRef options)
 {
+    NSDate *startDate = [NSDate date];
     n8log(@"Generating Preview");
     if (QLPreviewRequestIsCancelled(preview))
         return noErr;
@@ -27,9 +28,12 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
     CFBundleRef bundle = QLPreviewRequestGetGeneratorBundle(preview);
     int status;
     NSData *output = colorizeURL(bundle, url, &status, 0);
+    n8log(@"Generated preview html page in %.3f sec", -[startDate timeIntervalSinceNow] );
     
     if (status != 0 || QLPreviewRequestIsCancelled(preview)) {
+#ifndef DEBUG
         goto done;
+#endif
     }
     // Now let WebKit do its thing
     CFDictionaryRef emptydict = 
@@ -40,6 +44,7 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
                                           emptydict);
     
 done:
+    n8log(@"Finished preview in %.3f sec", -[startDate timeIntervalSinceNow] );
     [pool release];
     return noErr;
 }

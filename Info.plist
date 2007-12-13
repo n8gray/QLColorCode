@@ -188,31 +188,48 @@
                     <string>text/x-ini</string>
                 </dict>
             </dict>
-        <!-- This is from TexShop.  I don't know if I agree with it, but they're
-             a bigger fish as far as TeX is concerned... -->
-		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.text</string>
-			</array>
-			<key>UTTypeDescription</key>
-			<string>TeX text file</string>
-			<key>UTTypeIdentifier</key>
-			<string>org.tug.tex</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>com.apple.ostype</key>
-				<string>TEXT</string>
-				<key>public.filename-extension</key>
-				<array>
-					<string>tex</string>
-					<string>latex</string>
-					<string>ltx</string>
-					<string>texi</string>
-					<string>ctx</string>
-				</array>
-			</dict>
-		</dict>
+            <!-- This is from TexShop.  I don't know if I agree with it, but they're
+                 a bigger fish as far as TeX is concerned... -->
+            <dict>
+                <key>UTTypeConformsTo</key>
+                <array>
+                    <string>public.text</string>
+                </array>
+                <key>UTTypeDescription</key>
+                <string>TeX text file</string>
+                <key>UTTypeIdentifier</key>
+                <string>org.tug.tex</string>
+                <key>UTTypeTagSpecification</key>
+                <dict>
+                    <key>com.apple.ostype</key>
+                    <string>TEXT</string>
+                    <key>public.filename-extension</key>
+                    <array>
+                        <string>tex</string>
+                        <string>latex</string>
+                        <string>ltx</string>
+                        <string>texi</string>
+                        <string>ctx</string>
+                    </array>
+                </dict>
+            </dict>
+            <dict>
+                <key>UTTypeIdentifier</key>
+                <string>org.erlang.erlang-source</string>
+                <key>UTTypeDescription</key>
+                <string>Erlang Source File</string>
+                <key>UTTypeConformsTo</key>
+                <array>
+                    <string>public.source-code</string>
+                </array>
+                <key>UTTypeTagSpecification</key>
+                <dict>
+                    <key>public.filename-extension</key>
+                    <array>
+                        <string>erl</string>
+                    </array>
+                </dict>
+            </dict>
         </array>
 </dict>
 </plist>

@@ -3,29 +3,29 @@ QLColorCode
 <http://code.google.com/p/qlcolorcode/>
 
 This is a Quick Look plugin that renders source code with syntax highlighting,
-using the Pygments library: <http://pygments.org>
+using the Highlight library: <http://www.andre-simon.de/index.html>
 
 To install the plugin, just drag it to /Library/QuickLook or ~/Library/QuickLook.
 You may need to create that folder if it doesn't already exist.
 
 If you want to change the style of the syntax highlighting, take a look at 
-colorize.sh in the bundle's Resources folder.  I'm using a slightly modified 
-version of the autumn style called nautumn.
+colorize.sh in the bundle's Resources folder.
 
-Pygments can handle lots and lots of languages, but this plugin will only be 
+Highlight can handle lots and lots of languages, but this plugin will only be 
 invoked for file types that the OS knows are type "source-code".  Since the OS
 only knows about a limited number of languages, I've added Universal Type 
 Identifier (UTI) declarations for several "interesting" languages.  If I've 
 missed your favorite language, take a look at the Info.plist file inside the
 plugin bundle and look for the UTImportedTypeDeclarations section.  I
-haven't added all the languages that Pygments can handle because it's rumored
+haven't added all the languages that Highlight can handle because it's rumored
 that having two conflicting UTI declarations for the same file extension can
 cause problems.
 
-To build from source, you need the Pygments library.  Download the .tar.gz
-version of their source and uncompress it somewhere, then make a symbolic link
-to that location from ./pygments-src
+To build from source, you need the Highlight library.  Download the source and 
+uncompress it somewhere, then make a symbolic link to that location from 
+./highlight
 
+You'll also need to apply the highlight-2.6.6-getConfDir.diff patch. 
 After that you should be able to build as usual from Xcode.
 
 As an aside, by changing colorize.sh you can use this plugin to render any file

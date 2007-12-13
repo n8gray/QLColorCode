@@ -26,10 +26,11 @@
 		0E8776580D08E004005040B4 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8776560D08E004005040B4 /* Common.m */; };
 		0E8776B70D08ED64005040B4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8776B60D08ED64005040B4 /* WebKit.framework */; };
 		0E8776BD0D08EDA4005040B4 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8776BC0D08EDA4005040B4 /* AppKit.framework */; };
+		0E913A0A0D10B8060067BAD6 /* filetypes.conf in Copy .conf Files */ = {isa = PBXBuildFile; fileRef = 0E913A090D10B8060067BAD6 /* filetypes.conf */; };
+		0EB495D50D0FB13C00E86E0B /* colorize.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0ECBBB5D0CFD447E00416538 /* colorize.sh */; };
+		0EB496B10D0FC70D00E86E0B /* ml.lang in Copy .lang Files */ = {isa = PBXBuildFile; fileRef = 0EB4960D0D0FC24000E86E0B /* ml.lang */; };
 		0EC047970CFBDADF009C986E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC047960CFBDADF009C986E /* Foundation.framework */; };
 		0ECBBA6C0CFCA37500416538 /* QLColorCode.qlgenerator in Copy to Library */ = {isa = PBXBuildFile; fileRef = 8D576316048677EA00EA77CD /* QLColorCode.qlgenerator */; };
-		0ECBBB5E0CFD447E00416538 /* colorize.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0ECBBB5D0CFD447E00416538 /* colorize.sh */; };
-		0ECBBD090CFE4B9800416538 /* nautumn.py in Install Style */ = {isa = PBXBuildFile; fileRef = 0ECBBCFC0CFE4AC100416538 /* nautumn.py */; };
 		2C05A19C06CAA52B00D84F6F /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */; };
 		61E3BCFB0870B4F2002186A0 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.m */; };
 		8D576312048677EA00EA77CD /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 08FB77B6FE84183AC02AAC07 /* main.c */; settings = {ATTRIBUTES = (); }; };
@@ -51,6 +52,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0E913A110D10B84D0067BAD6 /* Copy .conf Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = override/config;
+			dstSubfolderSpec = 7;
+			files = (
+				0E913A0A0D10B8060067BAD6 /* filetypes.conf in Copy .conf Files */,
+			);
+			name = "Copy .conf Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0EB496B00D0FC68300E86E0B /* Copy .lang Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = override/langDefs;
+			dstSubfolderSpec = 7;
+			files = (
+				0EB496B10D0FC70D00E86E0B /* ml.lang in Copy .lang Files */,
+			);
+			name = "Copy .lang Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0ECBBA6F0CFCA39E00416538 /* Copy to Library */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -60,17 +83,6 @@
 				0ECBBA6C0CFCA37500416538 /* QLColorCode.qlgenerator in Copy to Library */,
 			);
 			name = "Copy to Library";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0ECBBD060CFE4B1A00416538 /* Install Style */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "pygments/Pygments-0.9-py2.5.egg/pygments/styles";
-			dstSubfolderSpec = 7;
-			files = (
-				0ECBBD090CFE4B9800416538 /* nautumn.py in Install Style */,
-			);
-			name = "Install Style";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -84,11 +96,12 @@
 		0E8776560D08E004005040B4 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		0E8776B60D08ED64005040B4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = SDKs/MacOSX10.5.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		0E8776BC0D08EDA4005040B4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = SDKs/MacOSX10.5.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
+		0E913A090D10B8060067BAD6 /* filetypes.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = filetypes.conf; sourceTree = "<group>"; };
+		0EB4960D0D0FC24000E86E0B /* ml.lang */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ml.lang; sourceTree = "<group>"; };
 		0EC047960CFBDADF009C986E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		0EC047F20CFC000A009C986E /* Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes.txt; sourceTree = "<group>"; };
 		0ECBBB360CFCF98600416538 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		0ECBBB5D0CFD447E00416538 /* colorize.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = colorize.sh; sourceTree = "<group>"; };
-		0ECBBCFC0CFE4AC100416538 /* nautumn.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = nautumn.py; sourceTree = "<group>"; };
 		2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
 		61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
 		8D576316048677EA00EA77CD /* QLColorCode.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QLColorCode.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +160,8 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0E913A090D10B8060067BAD6 /* filetypes.conf */,
+				0EB4960D0D0FC24000E86E0B /* ml.lang */,
 				8D576317048677EA00EA77CD /* Info.plist */,
 				8D5B49A704867FD3000E48DA /* InfoPlist.strings */,
 			);
@@ -162,7 +177,6 @@
 				2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */,
 				08FB77B6FE84183AC02AAC07 /* main.c */,
 				0ECBBB5D0CFD447E00416538 /* colorize.sh */,
-				0ECBBCFC0CFE4AC100416538 /* nautumn.py */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -197,8 +211,9 @@
 				8D57630F048677EA00EA77CD /* Resources */,
 				8D576311048677EA00EA77CD /* Sources */,
 				8D576313048677EA00EA77CD /* Frameworks */,
-				0EC048F20CFC103D009C986E /* Install Pygments */,
-				0ECBBD060CFE4B1A00416538 /* Install Style */,
+				0EB496B00D0FC68300E86E0B /* Copy .lang Files */,
+				0E913A110D10B84D0067BAD6 /* Copy .conf Files */,
+				0E9139D70D10A8320067BAD6 /* Install highlight */,
 				0ECBBA6F0CFCA39E00416538 /* Copy to Library */,
 			);
 			buildRules = (
@@ -234,8 +249,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EB495D50D0FB13C00E86E0B /* colorize.sh in Resources */,
 				8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */,
-				0ECBBB5E0CFD447E00416538 /* colorize.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,19 +270,19 @@
 			shellPath = "/bin/zsh -x";
 			shellScript = "# shell script goes here\nif [ $BUILD_STYLE != \"Release\" ]; then\n   echo \"Error: Must use Release build style\"\n   exit 1\nfi\n\ncd $PROJECT_DIR\nmkdir -vp release\ncd release\npkgDir=QLColorCode-$CURRENT_PROJECT_VERSION\nrm -rf $pkgDir\nmkdir $pkgDir\ncp -rp $TARGET_BUILD_DIR/*.qlgenerator $pkgDir\ncp ../ReadMe.txt $pkgDir\ncp ../LICENSE.txt $pkgDir\ntar cvzf $pkgDir.tgz $pkgDir";
 		};
-		0EC048F20CFC103D009C986E /* Install Pygments */ = {
+		0E9139D70D10A8320067BAD6 /* Install highlight */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Install Pygments";
+			name = "Install highlight";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = "/bin/zsh -x";
-			shellScript = "umask 022\ninstDir=${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Resources/pygments\nmkdir -p ${instDir}\n\ncd pygments-src\nPYTHONPATH=$instDir python setup.py install --install-lib $instDir --install-scripts $instDir";
+			shellPath = /bin/zsh;
+			shellScript = "set err_exit\ncd $PROJECT_DIR/highlight\nmake\nmake \\\n\tDESTDIR=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH \\\n\tPREFIX=/highlight/ \\\n\tinstall";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -342,6 +357,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
+				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_NAME = QLColorCode;
 				VALID_ARCHS = "i386 ppc";
 				WRAPPER_EXTENSION = qlgenerator;

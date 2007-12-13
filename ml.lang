@@ -1,0 +1,47 @@
+# Objective Caml language definition file
+#
+# Author: Andre Simon
+#   Mail: andre.simon1@gmx.de
+#   Date: 17.11.2003
+# ------------------------------------------
+# This file is a part of highlight, a free source code converter released under the GPL.
+#
+# The file is used to describe keywords and special symbols of programming languages.
+# See README in the highlight directory for details.
+#
+# New definition files for future releases of highlight are always appreciated ;)
+#
+# ----------
+# andre.simon1@gmx.de
+# http:/www.andre-simon.de/
+
+$KW_LIST(kwa)=and as assert asr begin  class constraint do done downto else
+end exception external false for fun function functor if in include inherit
+initializer land lazy let lor lsl lsr lxor match method mod module mutable new
+object of open or private rec sig struct then to true try type val virtual when
+while with
+
+# Types and type variables
+$KW_LIST(kwb)=bool string int real word float unit option ref
+$KW_RE(kwb)=regex('[a-zA-Z0-9_']+)
+
+# Modules
+$KW_RE(kwc)=regex(\b[A-Z][a-zA-Z0-9_']*(?=\.))
+
+# Constructors
+$KW_RE(kwd)=regex(\b[A-Z][a-zA-Z0-9_']*)
+
+$STRINGDELIMITERS="
+
+$ML_COMMENT=(* *)
+
+$ALLOWNESTEDCOMMENTS=true
+
+$IGNORECASE=false
+
+$ESCCHAR=\
+
+$SYMBOLS= ( ) [ ] { } , ; : & | < > !  = / * %  + -
+
+# This breaks keywords (kwa) for some reason:
+# $IDENTIFIER=regex(\b[a-z_][a-zA-Z0-9_']*?)

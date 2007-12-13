@@ -1,0 +1,41 @@
+diff -ur highlight-2.6.6-orig/src/datadir.cpp highlight-2.6.6/src/datadir.cpp
+--- highlight-2.6.6-orig/src/datadir.cpp	2007-10-02 13:35:45.000000000 -0700
++++ highlight-2.6.6/src/datadir.cpp	2007-12-12 17:25:44.000000000 -0800
+@@ -106,6 +106,12 @@
+ 
+ const string DataDir::getConfDir() {
+   #ifndef _WIN32
++     if (!additionalDataDir.empty()){
++        string path=getAdditionalConfDir();
++        if (fileExists(path)){
++           return path;
++        }
++     }
+      #ifdef HL_CONFIG_DIR
+      return HL_CONFIG_DIR;
+      #else
+@@ -126,6 +132,11 @@
+      return getDir();
+   #endif
+ }
++const string DataDir::getAdditionalConfDir()
++{
++  return additionalDataDir+"config"+Platform::pathSeparator;
++}
++
+ const string DataDir::getAdditionalLangDefDir()
+ {
+   return additionalDataDir+"langDefs"+Platform::pathSeparator;
+diff -ur highlight-2.6.6-orig/src/datadir.h highlight-2.6.6/src/datadir.h
+--- highlight-2.6.6-orig/src/datadir.h	2007-10-02 13:37:12.000000000 -0700
++++ highlight-2.6.6/src/datadir.h	2007-12-12 16:41:28.000000000 -0800
+@@ -69,6 +69,9 @@
+     /** \return User defined location of themes */
+      const string getAdditionalThemeDir() ;
+ 
++    /** \return User defined location of config files */
++     const string getAdditionalConfDir() ;
++
+     /** \return Location of help files */
+      const string getHelpMsgDir() ;
+ 

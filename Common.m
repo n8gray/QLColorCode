@@ -45,35 +45,29 @@ NSData *runTask(NSString *script, int *exitCode) {
     return data;
 }
 
+NSString *pathOfURL(CFURLRef url)
+{
+    NSString *targetCFS = [[(NSURL *)url absoluteURL] path];
+    return [targetCFS stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+}
+
 NSData *colorizeURL(CFBundleRef bundle, CFURLRef url, int *status, int thumbnail)
 {
     NSData *output = NULL;
-    unsigned char *targetBuf = malloc(PATH_MAX);
-    unsigned char *rsrcDirBuf = malloc(PATH_MAX);
-    char *thumbString;
     CFURLRef rsrcDirURL = CFBundleCopyResourcesDirectoryURL(bundle);
+    //n8log(@"rsrcDirURL = %@", CFURLGetString(rsrcDirURL));
+    NSString *rsrcEsc = pathOfURL(rsrcDirURL);
+    CFRelease(rsrcDirURL);
+    NSString *targetEsc = pathOfURL(url);
     
-    if (!CFURLGetFileSystemRepresentation(url, YES, targetBuf, PATH_MAX)
-        || !CFURLGetFileSystemRepresentation(rsrcDirURL, YES, rsrcDirBuf, PATH_MAX)) 
-    {
-        NSLog(@"QLColorCode: CFURLGetFileSystemRepresentation failed");
-        *status = 1;
-        goto done;
-    }
-    if (thumbnail)
-        thumbString = "1";
-    else
-        thumbString = "0";
     NSString *cmd = [NSString stringWithFormat:
-                     @"\"%s/colorize.sh\" \"%s\" \"%s\" %s", 
-                     rsrcDirBuf, rsrcDirBuf, targetBuf, thumbString];
+                     @"\"%@/colorize.sh\" \"%@\" \"%@\" %s", 
+                     rsrcEsc, rsrcEsc, targetEsc, thumbnail ? "1" : "0"];
+    n8log(@"cmd = %@", cmd);
     
     output = runTask(cmd, status);
     if (*status != 0) {
         NSLog(@"QLColorCode: colorize.sh failed with exit code %d", *status);
     }
-done:
-    free(targetBuf);
-    free(rsrcDirBuf);
     return output;
 }
