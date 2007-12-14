@@ -31,6 +31,8 @@
 		0EB496B10D0FC70D00E86E0B /* ml.lang in Copy .lang Files */ = {isa = PBXBuildFile; fileRef = 0EB4960D0D0FC24000E86E0B /* ml.lang */; };
 		0EC047970CFBDADF009C986E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC047960CFBDADF009C986E /* Foundation.framework */; };
 		0ECBBA6C0CFCA37500416538 /* QLColorCode.qlgenerator in Copy to Library */ = {isa = PBXBuildFile; fileRef = 8D576316048677EA00EA77CD /* QLColorCode.qlgenerator */; };
+		0EF57D440D122791006084D5 /* ide-xcode.style in Copy .style Files */ = {isa = PBXBuildFile; fileRef = 0EF57D430D122791006084D5 /* ide-xcode.style */; };
+		0EF57D6E0D122934006084D5 /* objc.lang in Copy .lang Files */ = {isa = PBXBuildFile; fileRef = 0EF57D6D0D122934006084D5 /* objc.lang */; };
 		2C05A19C06CAA52B00D84F6F /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */; };
 		61E3BCFB0870B4F2002186A0 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.m */; };
 		8D576312048677EA00EA77CD /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 08FB77B6FE84183AC02AAC07 /* main.c */; settings = {ATTRIBUTES = (); }; };
@@ -69,6 +71,7 @@
 			dstPath = override/langDefs;
 			dstSubfolderSpec = 7;
 			files = (
+				0EF57D6E0D122934006084D5 /* objc.lang in Copy .lang Files */,
 				0EB496B10D0FC70D00E86E0B /* ml.lang in Copy .lang Files */,
 			);
 			name = "Copy .lang Files";
@@ -83,6 +86,17 @@
 				0ECBBA6C0CFCA37500416538 /* QLColorCode.qlgenerator in Copy to Library */,
 			);
 			name = "Copy to Library";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0EF57D6C0D1228E3006084D5 /* Copy .style Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = override/themes;
+			dstSubfolderSpec = 7;
+			files = (
+				0EF57D440D122791006084D5 /* ide-xcode.style in Copy .style Files */,
+			);
+			name = "Copy .style Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -102,6 +116,8 @@
 		0EC047F20CFC000A009C986E /* Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes.txt; sourceTree = "<group>"; };
 		0ECBBB360CFCF98600416538 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		0ECBBB5D0CFD447E00416538 /* colorize.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = colorize.sh; sourceTree = "<group>"; };
+		0EF57D430D122791006084D5 /* ide-xcode.style */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ide-xcode.style"; sourceTree = "<group>"; };
+		0EF57D6D0D122934006084D5 /* objc.lang */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = objc.lang; sourceTree = "<group>"; };
 		2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
 		61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
 		8D576316048677EA00EA77CD /* QLColorCode.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QLColorCode.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,8 +176,10 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0E913A090D10B8060067BAD6 /* filetypes.conf */,
+				0EF57D6D0D122934006084D5 /* objc.lang */,
 				0EB4960D0D0FC24000E86E0B /* ml.lang */,
+				0EF57D430D122791006084D5 /* ide-xcode.style */,
+				0E913A090D10B8060067BAD6 /* filetypes.conf */,
 				8D576317048677EA00EA77CD /* Info.plist */,
 				8D5B49A704867FD3000E48DA /* InfoPlist.strings */,
 			);
@@ -212,6 +230,7 @@
 				8D576311048677EA00EA77CD /* Sources */,
 				8D576313048677EA00EA77CD /* Frameworks */,
 				0EB496B00D0FC68300E86E0B /* Copy .lang Files */,
+				0EF57D6C0D1228E3006084D5 /* Copy .style Files */,
 				0E913A110D10B84D0067BAD6 /* Copy .conf Files */,
 				0E9139D70D10A8320067BAD6 /* Install highlight */,
 				0ECBBA6F0CFCA39E00416538 /* Copy to Library */,

@@ -22,11 +22,11 @@ object of open or private rec sig struct then to true try type val virtual when
 while with
 
 # Types and type variables
-$KW_LIST(kwb)=bool string int real word float unit option ref
+$KW_LIST(kwb)=int float string char bool list exn array option format fpclass in_channel out_channel open_flag ref unit
 $KW_RE(kwb)=regex('[a-zA-Z0-9_']+)
 
 # Modules
-$KW_RE(kwc)=regex(\b[A-Z][a-zA-Z0-9_']*(?=\.))
+$KW_RE(callr)=regex(\b[A-Z][a-zA-Z0-9_']*(?=\.))
 
 # Constructors
 $KW_RE(kwd)=regex(\b[A-Z][a-zA-Z0-9_']*)

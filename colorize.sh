@@ -14,6 +14,19 @@
 #
 # Produces HTML on stdout with exit code 0 on success
 
+# You can customize the appearance by changing these parameters:
+# Installed themes: acid, bipolar, blacknblue, bright, contrast, darkblue, 
+#   darkness, desert, easter, emacs, golden, greenlcd, ide-anjuta, 
+#   ide-codewarrior, ide-devcpp, ide-eclipse, ide-kdev, ide-msvcpp, ide-xcode, 
+#   kwrite, lucretia, matlab, moe, navy, nedit, neon, night, orion, pablo, 
+#   peachpuff, print, rand01, seashell, the, typical, vampire, vim-dark, vim, 
+#   whitengrey, zellner
+theme=ide-xcode
+font=Monaco
+fontSizePoints=9
+
+###############################################################################
+
 # Fail immediately on failure of sub-command
 setopt err_exit
 
@@ -21,17 +34,15 @@ rsrcDir=$1
 target=$2
 thumb=$3
 
-thumblines=50
-font=Monaco
-
 hlDir=$rsrcDir/highlight
 cmd=$hlDir/bin/highlight
 cmdOpts=(-I --font $font --quiet --add-data-dir $rsrcDir/override \
-         --data-dir $rsrcDir/highlight/share/highlight)
+         --data-dir $rsrcDir/highlight/share/highlight --style $theme \
+         --font-size $fontSizePoints)
 
 reader=(cat $target)
 if [ $thumb = "1" ]; then
-    filter=(head -n $thumblines)
+    filter=(head -n 50)
 else
     filter=cat
 fi
@@ -41,7 +52,25 @@ case $target in
         lang=xml
         reader=(/usr/bin/plutil -convert xml1 -o - $target)
         ;;
-    * )         lang=${target##*.}
+    *.h )
+        if grep -q "@interface" $target &> /dev/null; then
+            lang=objc
+        else
+            lang=h
+        fi
+        ;;
+    *.m )
+        # look for a matlab-style comment in the first 10 lines, otherwise
+        # assume objective-c.  If you never use matlab or never use objc,
+        # you might want to hardwire this one way or the other
+        if head -n 10 $target | grep -q "^ *%" &> /dev/null; then
+            lang=m
+        else
+            lang=objc
+        fi
+        ;;
+    * ) 
+        lang=${target##*.}
     ;;
 esac
 
