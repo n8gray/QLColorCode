@@ -25,7 +25,9 @@ OSStatus GenerateThumbnailForURL(void *thisInterface,
     if (maxSize.width < minSize || maxSize.height < minSize)
         return noErr;
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+#ifdef DEBUG
     NSDate *startDate = [NSDate date];
+#endif
     
     // Render as though there is an 600x800 window, and fill the thumbnail 
     // vertically.  This code could be more general.  I'm assuming maxSize is

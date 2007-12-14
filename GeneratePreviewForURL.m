@@ -17,7 +17,9 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
                                CFURLRef url, CFStringRef contentTypeUTI, 
                                CFDictionaryRef options)
 {
+#ifdef DEBUG
     NSDate *startDate = [NSDate date];
+#endif
     n8log(@"Generating Preview");
     if (QLPreviewRequestIsCancelled(preview))
         return noErr;
