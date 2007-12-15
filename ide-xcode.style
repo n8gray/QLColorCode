@@ -2,6 +2,8 @@
 # This File is part of highlight, a universal source code converter.
 # See README in the highlight directory for documentation.
 
+# Modified by Nathan Gray
+
 $DEFAULTCOLOUR=00 00 00
 $BGCOLOUR=ff ff ff
 $FONTSIZE=11
@@ -10,6 +12,7 @@ $KW-GROUP(kwb)=8f 00 55
 $KW-GROUP(kwc)=8f 00 55
 $KW-GROUP(kwd)=00 55 55
 $KW-GROUP(callr)=00 09 88
+$KW-GROUP(fndef)=8f 55 00
 $NUMBER=23 00 ff
 $STRING=c0 00 00
 $KW-GROUP(str)=c0 00 00

@@ -16,6 +16,8 @@
 # andre.simon1@gmx.de
 # http:/www.andre-simon.de/
 
+# Modified by Nathan Gray
+
 $DESCRIPTION=C and C++
 
 $KW_LIST(kwa)=goto break return continue asm case default if else switch while for do sizeof

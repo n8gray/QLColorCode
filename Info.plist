@@ -303,6 +303,24 @@
                     </array>
                 </dict>
             </dict>
+            <!-- This is for testing the behavior when highlight fails -->
+            <dict>
+                <key>UTTypeIdentifier</key>
+                <string>org.n8gray.bogusextension</string>
+                <key>UTTypeDescription</key>
+                <string>QLColorCode Test File</string>
+                <key>UTTypeConformsTo</key>
+                <array>
+                    <string>public.source-code</string>
+                </array>
+                <key>UTTypeTagSpecification</key>
+                <dict>
+                    <key>public.filename-extension</key>
+                    <array>
+                        <string>bogus_extension</string>
+                    </array>
+                </dict>
+            </dict>
 
         </array>
 </dict>

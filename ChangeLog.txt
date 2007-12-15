@@ -1,10 +1,9 @@
-0.3: (In progress)
+0.3:
     * Ensure highlight is compiled as a universal binary
     * Added .command as an alternate extension for shell scripts
     * Added .mll and .mly extensions for OCaml
     * Include customized .css and .c language definition files
     * Created a slateGreen theme that matches my editor colors.  :-)
-    * 
 
 0.2:
     * Switched from Pygments to Highlight.  This should increase speed *and* language coverage.

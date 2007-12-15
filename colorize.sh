@@ -78,4 +78,8 @@ case $target in
     ;;
 esac
 
-$reader | $filter | $cmd --syntax $lang $cmdOpts
+setopt no_err_exit
+$reader | $filter | $cmd --syntax $lang $cmdOpts && exit 0
+# Uh-oh, it didn't work.  Fall back to rendering the file as plain
+lang=txt
+$reader | $filter | $cmd --syntax $lang $cmdOpts && exit 0
