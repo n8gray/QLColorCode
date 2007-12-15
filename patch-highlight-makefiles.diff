@@ -1,0 +1,33 @@
+diff -ur highlight-2.6.6-orig/makefile highlight-2.6.6/makefile
+--- highlight-2.6.6-orig/makefile	2007-07-06 16:33:59.000000000 -0700
++++ highlight-2.6.6/makefile	2007-12-14 15:15:40.000000000 -0800
+@@ -33,6 +33,9 @@
+ MKDIR=mkdir -p -m 755
+ RMDIR=rm -r -f
+ 
++export CFLAGS
++export LDFLAGS
++
+ all:
+ 	${MAKE} -C ./src -f ./makefile HL_DATA_DIR=${data_dir} HL_CONFIG_DIR=${conf_dir}
+ 
+diff -ur highlight-2.6.6-orig/src/makefile highlight-2.6.6/src/makefile
+--- highlight-2.6.6-orig/src/makefile	2007-10-01 17:42:39.000000000 -0700
++++ highlight-2.6.6/src/makefile	2007-12-14 15:15:21.000000000 -0800
+@@ -15,13 +15,13 @@
+ 
+ CXX=c++
+ 
+-CFLAGS := -O2
++CFLAGS := ${CFLAGS} -O2
+ 
+ # Do not strip by default (Mac OS X lazy pointer issues)
+ # Add -static to avoid linking with shared libs (can cause trouble when highlight
+ # is run as service)
+-LDFLAGS =
+-#LDFLAGS = -s
++LDFLAGS := ${LDFLAGS}
++#LDFLAGS := ${LDFLAGS} -s
+ 
+ CXX_COMPILE = ${CXX} ${CFLAGS} -c
+ CXX_LINK = ${CXX} ${LDFLAGS} -o highlight ${OBJECTFILES}

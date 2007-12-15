@@ -15,6 +15,8 @@
 # andre.simon1@gmx.de
 # http:/www.andre-simon.de/
 
+#### REMEMBER: \s includes \n!
+
 $KW_LIST(kwa)=goto break return continue asm case default if else switch while for do sizeof typeof
 typedef inline stdcall auto cdecl class const_cast delete dynamic_cast explicit
 extern friend goto inline mutable namespace new operator pascal register reinterpret_cast private
@@ -29,9 +31,13 @@ volatile extern const bool struct union enum
 
 $KW_RE(kwa)=regex(@\w+)
 
+$KW_RE(fndef)=regex(^(?!typedef)[_a-zA-Z][*\w\t ]*(?:\n|[ \t])?[ \t]*[_a-zA-Z]\w*[ \t]*(?=\((?!\s*\*)))
+
 $KW_RE(kwd)=regex((\w+?)\s*\()
 
-$KW_RE(callr)=regex((?<=\[)\w+)
+# A method call target is any identifier inside an open bracket followed by 
+# another identifier
+$KW_RE(callr)=regex((?<=\[)\s*\w+(?=\s+[_a-zA-Z]))
 
 $KW_RE(str)=regex(@(?="))
 

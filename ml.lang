@@ -15,6 +15,9 @@
 # andre.simon1@gmx.de
 # http:/www.andre-simon.de/
 
+# Character literals
+$KW_RE(str)=regex('(?:[^\\]|\\.|\\[a-fA-F0-9]{2,3})')
+
 $KW_LIST(kwa)=and as assert asr begin  class constraint do done downto else
 end exception external false for fun function functor if in include inherit
 initializer land lazy let lor lsl lsr lxor match method mod module mutable new
@@ -23,13 +26,13 @@ while with
 
 # Types and type variables
 $KW_LIST(kwb)=int float string char bool list exn array option format fpclass in_channel out_channel open_flag ref unit
-$KW_RE(kwb)=regex('[a-zA-Z0-9_']+)
+$KW_RE(kwb)=regex('[a-zA-Z_]+|\b[A-Z][a-zA-Z0-9_']*)
 
 # Modules
 $KW_RE(callr)=regex(\b[A-Z][a-zA-Z0-9_']*(?=\.))
 
-# Constructors
-$KW_RE(kwd)=regex(\b[A-Z][a-zA-Z0-9_']*)
+# Function defs
+$KW_RE(fndef)=regex(let([ \t]+rec)?[ \t]+([a-z][\w']*)[ \t]+[^=:,])
 
 $STRINGDELIMITERS="
 

@@ -1,8 +1,16 @@
+0.3: (In progress)
+    * Ensure highlight is compiled as a universal binary
+    * Added .command as an alternate extension for shell scripts
+    * Added .mll and .mly extensions for OCaml
+    * Include customized .css and .c language definition files
+    * Created a slateGreen theme that matches my editor colors.  :-)
+    * 
+
 0.2:
-    - Switched from Pygments to Highlight
-    - Added thumbnailing support
-    - Changed .tex UTI to agree with TeXShop's.
-    - (Try to) let the system pick a different plugin if ours fails
-    - Added UTIs for .css, .sql, .erl, and .sml
+    * Switched from Pygments to Highlight.  This should increase speed *and* language coverage.
+    * Added thumbnailing support
+    * Changed .tex UTI to agree with TeXShop's.
+    * (Try to) let the system pick a different plugin if ours fails
+    * Added UTIs for .css, .sql, .erl, and .sml
 
 0.1: Initial release

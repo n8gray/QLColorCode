@@ -33,6 +33,9 @@
 		0ECBBA6C0CFCA37500416538 /* QLColorCode.qlgenerator in Copy to Library */ = {isa = PBXBuildFile; fileRef = 8D576316048677EA00EA77CD /* QLColorCode.qlgenerator */; };
 		0EF57D440D122791006084D5 /* ide-xcode.style in Copy .style Files */ = {isa = PBXBuildFile; fileRef = 0EF57D430D122791006084D5 /* ide-xcode.style */; };
 		0EF57D6E0D122934006084D5 /* objc.lang in Copy .lang Files */ = {isa = PBXBuildFile; fileRef = 0EF57D6D0D122934006084D5 /* objc.lang */; };
+		0EF57E6A0D125AB2006084D5 /* slateGreen.style in Copy .style Files */ = {isa = PBXBuildFile; fileRef = 0EF57E690D125AB2006084D5 /* slateGreen.style */; };
+		0EF57F2F0D128219006084D5 /* c.lang in Copy .lang Files */ = {isa = PBXBuildFile; fileRef = 0EF57F2E0D128219006084D5 /* c.lang */; };
+		0EF57F960D133EF7006084D5 /* css.lang in Copy .lang Files */ = {isa = PBXBuildFile; fileRef = 0EF57F7D0D133C0F006084D5 /* css.lang */; };
 		2C05A19C06CAA52B00D84F6F /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */; };
 		61E3BCFB0870B4F2002186A0 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.m */; };
 		8D576312048677EA00EA77CD /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 08FB77B6FE84183AC02AAC07 /* main.c */; settings = {ATTRIBUTES = (); }; };
@@ -71,6 +74,8 @@
 			dstPath = override/langDefs;
 			dstSubfolderSpec = 7;
 			files = (
+				0EF57F960D133EF7006084D5 /* css.lang in Copy .lang Files */,
+				0EF57F2F0D128219006084D5 /* c.lang in Copy .lang Files */,
 				0EF57D6E0D122934006084D5 /* objc.lang in Copy .lang Files */,
 				0EB496B10D0FC70D00E86E0B /* ml.lang in Copy .lang Files */,
 			);
@@ -94,6 +99,7 @@
 			dstPath = override/themes;
 			dstSubfolderSpec = 7;
 			files = (
+				0EF57E6A0D125AB2006084D5 /* slateGreen.style in Copy .style Files */,
 				0EF57D440D122791006084D5 /* ide-xcode.style in Copy .style Files */,
 			);
 			name = "Copy .style Files";
@@ -118,6 +124,10 @@
 		0ECBBB5D0CFD447E00416538 /* colorize.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = colorize.sh; sourceTree = "<group>"; };
 		0EF57D430D122791006084D5 /* ide-xcode.style */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ide-xcode.style"; sourceTree = "<group>"; };
 		0EF57D6D0D122934006084D5 /* objc.lang */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = objc.lang; sourceTree = "<group>"; };
+		0EF57E4D0D123DD0006084D5 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		0EF57E690D125AB2006084D5 /* slateGreen.style */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = slateGreen.style; sourceTree = "<group>"; };
+		0EF57F2E0D128219006084D5 /* c.lang */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = c.lang; sourceTree = "<group>"; };
+		0EF57F7D0D133C0F006084D5 /* css.lang */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = css.lang; sourceTree = "<group>"; };
 		2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
 		61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
 		8D576316048677EA00EA77CD /* QLColorCode.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QLColorCode.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +161,7 @@
 				0EC047F20CFC000A009C986E /* Notes.txt */,
 				0ECBBB360CFCF98600416538 /* ReadMe.txt */,
 				0E51C65F0D04E492007853CB /* ChangeLog.txt */,
+				0EF57E4D0D123DD0006084D5 /* LICENSE.txt */,
 				08FB77AFFE84173DC02AAC07 /* Source */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* External Frameworks and Libraries */,
@@ -176,9 +187,12 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0EF57F2E0D128219006084D5 /* c.lang */,
+				0EF57F7D0D133C0F006084D5 /* css.lang */,
 				0EF57D6D0D122934006084D5 /* objc.lang */,
 				0EB4960D0D0FC24000E86E0B /* ml.lang */,
 				0EF57D430D122791006084D5 /* ide-xcode.style */,
+				0EF57E690D125AB2006084D5 /* slateGreen.style */,
 				0E913A090D10B8060067BAD6 /* filetypes.conf */,
 				8D576317048677EA00EA77CD /* Info.plist */,
 				8D5B49A704867FD3000E48DA /* InfoPlist.strings */,
@@ -287,7 +301,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/bin/zsh -x";
-			shellScript = "# shell script goes here\nif [ $BUILD_STYLE != \"Release\" ]; then\n   echo \"Error: Must use Release build style\"\n   exit 1\nfi\n\ncd $PROJECT_DIR\nmkdir -vp release\ncd release\npkgDir=QLColorCode-$CURRENT_PROJECT_VERSION\nrm -rf $pkgDir\nmkdir $pkgDir\ncp -rp $TARGET_BUILD_DIR/*.qlgenerator $pkgDir\ncp ../ReadMe.txt $pkgDir\ncp ../LICENSE.txt $pkgDir\ntar cvzf $pkgDir.tgz $pkgDir";
+			shellScript = "# shell script goes here\nif [ $BUILD_STYLE != \"Release\" ]; then\n   echo \"Error: Must use Release build style\"\n   exit 1\nfi\n\ncd $PROJECT_DIR\nmkdir -vp release\ncd release\npkgDir=QLColorCode-$CURRENT_PROJECT_VERSION\nrm -rf $pkgDir\nmkdir $pkgDir\ncp -rp $TARGET_BUILD_DIR/*.qlgenerator $pkgDir\ncp ../ReadMe.txt $pkgDir\ncp ../LICENSE.txt $pkgDir\ncp ../ChangeLog.txt $pkgDir\ntar cvzf $pkgDir.tgz $pkgDir";
 		};
 		0E9139D70D10A8320067BAD6 /* Install highlight */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -300,8 +314,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/zsh;
-			shellScript = "set err_exit\ncd $PROJECT_DIR/highlight\nmake\nmake \\\n\tDESTDIR=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH \\\n\tPREFIX=/highlight/ \\\n\tinstall";
+			shellPath = "/bin/zsh -x";
+			shellScript = "set err_exit\ncd $PROJECT_DIR/highlight\nexport CFLAGS='-arch i386 -arch ppc'\nexport LDFLAGS=$CFLAGS\nmake\n# Make sure it was built universal\nlipo -info src/highlight | grep -q ppc || exit 1\nlipo -info src/highlight | grep -q i386 || exit 1\nmake \\\n\tDESTDIR=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH \\\n\tPREFIX=/highlight/ \\\n\tinstall\n\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

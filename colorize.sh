@@ -24,6 +24,10 @@
 theme=ide-xcode
 font=Monaco
 fontSizePoints=9
+#theme=slateGreen
+#font=fixed
+# For some reason 10 points gives me Fixed at 13 points.
+#fontSizePoints=10
 
 ###############################################################################
 
@@ -42,7 +46,7 @@ cmdOpts=(-I --font $font --quiet --add-data-dir $rsrcDir/override \
 
 reader=(cat $target)
 if [ $thumb = "1" ]; then
-    filter=(head -n 50)
+    filter=(head -n 100)
 else
     filter=cat
 fi

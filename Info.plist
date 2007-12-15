@@ -93,6 +93,8 @@
                     <key>public.filename-extension</key>
                     <array>
                         <string>ml</string>
+                        <string>mll</string>
+                        <string>mly</string>
                     </array>
                 </dict>
             </dict>
