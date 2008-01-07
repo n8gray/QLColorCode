@@ -301,7 +301,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/bin/zsh -x";
-			shellScript = "# shell script goes here\nif [ $BUILD_STYLE != \"Release\" ]; then\n   echo \"Error: Must use Release build style\"\n   exit 1\nfi\n\ncd $PROJECT_DIR\nmkdir -vp release\ncd release\npkgDir=QLColorCode-$CURRENT_PROJECT_VERSION\nrm -rf $pkgDir\nmkdir $pkgDir\ncp -rp $TARGET_BUILD_DIR/*.qlgenerator $pkgDir\ncp ../ReadMe.txt $pkgDir\ncp ../LICENSE.txt $pkgDir\ncp ../ChangeLog.txt $pkgDir\ntar cvzf $pkgDir.tgz $pkgDir";
+			shellScript = "# shell script goes here\nif [ $BUILD_STYLE != \"Release\" ]; then\n   echo \"Error: Must use Release build style\"\n   exit 1\nfi\n\ncd $PROJECT_DIR\nmkdir -vp release\ncd release\npkgDir=QLColorCode-$CURRENT_PROJECT_VERSION\nrm -rf $pkgDir\nmkdir $pkgDir\ncp -rp $TARGET_BUILD_DIR/*.qlgenerator $pkgDir\ncp ../ReadMe.txt $pkgDir\ncp ../LICENSE.txt $pkgDir\ncp ../ChangeLog.txt $pkgDir\n# For some reason Xcode has been producing world-writable output on occasion\nchmod -R o-w $pkgDir\ntar cvzf $pkgDir.tgz $pkgDir";
 		};
 		0E9139D70D10A8320067BAD6 /* Install highlight */ = {
 			isa = PBXShellScriptBuildPhase;
