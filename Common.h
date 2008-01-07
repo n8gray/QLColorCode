@@ -3,7 +3,7 @@
  *  QLColorCode
  *
  *  Created by Nathaniel Gray on 12/6/07.
- *  Copyright 2007 Nathaniel Gray. All rights reserved.
+ *  Copyright 2007 Nathaniel Gray.
  *
  */
 #import <CoreFoundation/CoreFoundation.h>
@@ -14,6 +14,8 @@
 #else
 #define n8log(...)
 #endif
+
+#define myDomain @"org.n8gray.QLColorCode"
 
 // Status is 0 on success, nonzero on error (like a shell command)
 // If thumbnail is 1, only render enough of the file for a thumbnail

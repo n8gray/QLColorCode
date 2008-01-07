@@ -3,7 +3,7 @@
  *  QLColorCode
  *
  *  Created by Nathaniel Gray on 12/6/07.
- *  Copyright 2007 Nathaniel Gray. All rights reserved.
+ *  Copyright 2007 Nathaniel Gray.
  *
  */
 
@@ -15,10 +15,10 @@
 #include "Common.h"
 
 
-NSData *runTask(NSString *script, int *exitCode) {
+NSData *runTask(NSString *script, NSDictionary *env, int *exitCode) {
     NSTask *task = [[NSTask alloc] init];
     [task setCurrentDirectoryPath:@"/tmp"];     /* XXX: Fix this */
-    //[task setEnvironment:env];
+    [task setEnvironment:env];
     [task setLaunchPath:@"/bin/sh"];
     [task setArguments:[NSArray arrayWithObjects:@"-c", script, nil]];
     
@@ -60,12 +60,23 @@ NSData *colorizeURL(CFBundleRef bundle, CFURLRef url, int *status, int thumbnail
     CFRelease(rsrcDirURL);
     NSString *targetEsc = pathOfURL(url);
     
+    // Set up preferences
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary *env = [NSMutableDictionary dictionaryWithDictionary:
+                                [[NSProcessInfo processInfo] environment]];
+    [env addEntriesFromDictionary:[NSDictionary dictionaryWithObjectsAndKeys:
+                                   @"9", @"fontSizePoints",
+                                   @"Monaco", @"font",
+                                   @"ide-xcode", @"hlTheme", 
+                                   @"", @"extraHLFlags", nil]];
+    [env addEntriesFromDictionary:[defaults persistentDomainForName:myDomain]];
+    
     NSString *cmd = [NSString stringWithFormat:
                      @"\"%@/colorize.sh\" \"%@\" \"%@\" %s", 
                      rsrcEsc, rsrcEsc, targetEsc, thumbnail ? "1" : "0"];
     n8log(@"cmd = %@", cmd);
     
-    output = runTask(cmd, status);
+    output = runTask(cmd, env, status);
     if (*status != 0) {
         NSLog(@"QLColorCode: colorize.sh failed with exit code %d", *status);
     }

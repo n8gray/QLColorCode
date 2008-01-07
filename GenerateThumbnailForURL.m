@@ -1,3 +1,5 @@
+/* Copyright Nathaniel Gray */
+
 #include <CoreFoundation/CoreFoundation.h>
 #include <CoreServices/CoreServices.h>
 #include <QuickLook/QuickLook.h>

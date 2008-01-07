@@ -1,4 +1,5 @@
-/* This code is licensed under the GPL v2.  See LICENSE.txt for details. */
+/* This code is copyright Nathaniel Gray, licensed under the GPL v2.  
+    See LICENSE.txt for details. */
 
 #import <CoreFoundation/CoreFoundation.h>
 #import <CoreServices/CoreServices.h>

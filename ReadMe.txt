@@ -8,8 +8,56 @@ using the Highlight library: <http://www.andre-simon.de/index.html>
 To install the plugin, just drag it to /Library/QuickLook or ~/Library/QuickLook.
 You may need to create that folder if it doesn't already exist.
 
-If you want to change the style of the syntax highlighting, take a look at 
-colorize.sh in the bundle's Resources folder.
+If you want to change the style of the syntax highlighting, there are several 
+"defaults" commands that could be useful:
+
+Setting the font:
+    defaults write org.n8gray.QLColorCode font Monaco
+the font size:
+    defaults write org.n8gray.QLColorCode fontSizePoints 9
+the color style (see below):
+    defaults write org.n8gray.QLColorCode hlStyle ide-xcode
+any extra command-line flags for Highlight (see below):
+    defaults write org.n8gray.QLColorCode extraHLFlags '-l -W'
+
+The following color styles are included with QLColorCode:
+   acid, bipolar, blacknblue, bright, contrast, darkblue, 
+   darkness, desert, easter, emacs, golden, greenlcd, ide-anjuta, 
+   ide-codewarrior, ide-devcpp, ide-eclipse, ide-kdev, ide-msvcpp, ide-xcode, 
+   kwrite, lucretia, matlab, moe, navy, nedit, neon, night, orion, pablo, 
+   peachpuff, print, rand01, seashell, slateGreen, the, typical, vampire, 
+   vim-dark, vim, whitengrey, zellner
+
+Here are some useful 'highlight' command-line flags (from the man page):
+       -F, --reformat=<style>
+              reformat output in given style.   <style>=[ansi,  gnu,  kr,
+              java, linux]
+
+       -J, --line-length=<num>
+              line length before wrapping (see -W, -V)
+
+       -j, --line-number-length=<num>
+              line number length incl. left padding
+
+       -l, --linenumbers
+              print line numbers in output file
+
+       -t  --replace-tabs=<num>
+              replace tabs by num spaces
+
+       -V, --wrap-simple
+              wrap long lines without indenting function  parameters  and
+              statements
+
+       -W, --wrap
+              wrap long lines (use with caution)
+
+       -z, --zeroes
+              fill leading space of line numbers with zeroes
+
+       --kw-case=<upper|lower>
+              output  all keywords in upper/lower case if language is not
+              case sensitive
 
 Highlight can handle lots and lots of languages, but this plugin will only be 
 invoked for file types that the OS knows are type "source-code".  Since the OS

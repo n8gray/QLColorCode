@@ -1,3 +1,8 @@
+0.4 (in progress):
+    * Added Tcl, Lua, and JSP support
+    * Can now configure appearance with "defaults write org.n8gray.QLColorCode ..." commands
+    * Improved OCaml, C/C++ and Obj-C modes.
+
 0.3:
     * Ensure highlight is compiled as a universal binary
     * If highlight fails to colorize a file render it as plain text

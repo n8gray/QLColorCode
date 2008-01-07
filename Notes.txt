@@ -7,6 +7,8 @@ highlight-2.6.6-getConfDir.diff if necessary.
 
 The version is handled in the Current Project Version variable in the project.
 
+
+
 TODO:
 *   A strategy for generating UTIs for file types we can handle
 *   Some kind of style configuration interface.  Pref pane?  Helper app?

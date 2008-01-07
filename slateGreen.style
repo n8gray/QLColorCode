@@ -26,7 +26,7 @@ $COMMENT=#00EEEE italic
 $DIRECTIVE=#EEDD82
 # for the string in: #include "foo"
 $STRING-DIRECTIVE=#ADFF2F
-$LINE=#FFFF00
+$LINE=#EEDD82
+$MARK-LINE=#FFFF00
 # This is actually for punctuation
 $SYMBOL=#EEEE00
-$MARK-LINE=ff ff bb

@@ -33,7 +33,10 @@ volatile extern const bool struct union enum
 
 $KW_RE(kwa)=regex(@\w+)
 
-$KW_RE(fndef)=regex(^(?!typedef)[_a-zA-Z][*\w\t ]*(?:\n|[ \t])?[ \t]*[_a-zA-Z]\w*[ \t]*(?=\((?!\s*\*)))
+$KW_RE(fndef)=regex(^(?!typedef)[_a-zA-Z][*\w\t ]*(?:\n|[ \t])?[ \t]*[_a-zA-Z]\w*[ \t]*(?=\((?!\s*\*))|^[ \t]*[\-+][ \t]*(?:\([ \t]*[_a-zA-Z]\w*[* \t]*\))?[ \t]*[_a-zA-Z]\w*(?=[ \t]*(?:\n[ \t]*)?(?=[:{])))
+
+# Tmp. for debugging:
+#$KW_RE(fndef)=regex(([_a-zA-Z]\w*)\s*(?:[:{]))
 
 $KW_RE(kwd)=regex((\w+?)\s*\()
 

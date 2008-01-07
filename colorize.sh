@@ -6,28 +6,13 @@
 # QLColorCode
 #
 # Created by Nathaniel Gray on 11/27/07.
-# Copyright 2007 Nathaniel Gray. All rights reserved.
+# Copyright 2007 Nathaniel Gray.
 
 # Expects   $1 = path to resources dir of bundle
 #           $2 = name of file to colorize
 #           $3 = 1 if you want enough for a thumbnail, 0 for the full file
 #
 # Produces HTML on stdout with exit code 0 on success
-
-# You can customize the appearance by changing these parameters:
-# Installed themes: acid, bipolar, blacknblue, bright, contrast, darkblue, 
-#   darkness, desert, easter, emacs, golden, greenlcd, ide-anjuta, 
-#   ide-codewarrior, ide-devcpp, ide-eclipse, ide-kdev, ide-msvcpp, ide-xcode, 
-#   kwrite, lucretia, matlab, moe, navy, nedit, neon, night, orion, pablo, 
-#   peachpuff, print, rand01, seashell, the, typical, vampire, vim-dark, vim, 
-#   whitengrey, zellner
-theme=ide-xcode
-font=Monaco
-fontSizePoints=9
-#theme=slateGreen
-#font=fixed
-# For some reason 10 points gives me Fixed at 13 points.
-#fontSizePoints=10
 
 ###############################################################################
 
@@ -41,8 +26,10 @@ thumb=$3
 hlDir=$rsrcDir/highlight
 cmd=$hlDir/bin/highlight
 cmdOpts=(-I --font $font --quiet --add-data-dir $rsrcDir/override \
-         --data-dir $rsrcDir/highlight/share/highlight --style $theme \
-         --font-size $fontSizePoints)
+         --data-dir $rsrcDir/highlight/share/highlight --style $hlTheme \
+         --font-size $fontSizePoints ${=extraHLFlags})
+
+#for o in $cmdOpts; do echo $o\<br/\>; done 
 
 reader=(cat $target)
 if [ $thumb = "1" ]; then
@@ -52,6 +39,9 @@ else
 fi
 
 case $target in
+    *.graffle )
+        # some omnigraffle files are XML and get passed to us.  Ignore them.
+        exit 1
     *.plist )
         lang=xml
         reader=(/usr/bin/plutil -convert xml1 -o - $target)
