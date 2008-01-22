@@ -370,6 +370,25 @@
                     </array>
                 </dict>
             </dict>
+            <dict>
+                <key>UTTypeIdentifier</key>
+                <string>org.n8gray.lisp</string>
+                <key>UTTypeDescription</key>
+                <string>Lisp Source File</string>
+                <key>UTTypeConformsTo</key>
+                <array>
+                    <string>public.source-code</string>
+                </array>
+                <key>UTTypeTagSpecification</key>
+                <dict>
+                    <key>public.filename-extension</key>
+                    <array>
+                        <string>lisp</string>
+                        <string>lsp</string>
+                        <string>asd</string>
+                    </array>
+                </dict>
+            </dict>
             <!-- This is for testing the behavior when highlight fails -->
             <dict>
                 <key>UTTypeIdentifier</key>
