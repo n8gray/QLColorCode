@@ -353,6 +353,23 @@
                     </array>
                 </dict>
             </dict>
+            <dict>
+                <key>UTTypeIdentifier</key>
+                <string>com.adobe.actionscript</string>
+                <key>UTTypeDescription</key>
+                <string>Adobe Flash ActionScript Source File</string>
+                <key>UTTypeConformsTo</key>
+                <array>
+                    <string>public.source-code</string>
+                </array>
+                <key>UTTypeTagSpecification</key>
+                <dict>
+                    <key>public.filename-extension</key>
+                    <array>
+                        <string>as</string>
+                    </array>
+                </dict>
+            </dict>
             <!-- This is for testing the behavior when highlight fails -->
             <dict>
                 <key>UTTypeIdentifier</key>
