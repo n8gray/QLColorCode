@@ -32,11 +32,6 @@ cmdOpts=(-I --font $font --quiet --add-data-dir $rsrcDir/override \
 #for o in $cmdOpts; do echo $o\<br/\>; done 
 
 reader=(cat $target)
-if [ $thumb = "1" ]; then
-    filter=(head -n 100)
-else
-    filter=cat
-fi
 
 case $target in
     *.graffle )
@@ -69,8 +64,18 @@ case $target in
     ;;
 esac
 
+go4it () {
+    if [ $thumb = "1" ]; then
+        $reader | head -n 100 | head -c 20000 | $cmd --syntax $lang $cmdOpts && exit 0
+    elif [ -n "$maxFileSize" ]; then
+        $reader | head -c $maxFileSize | $cmd --syntax $lang $cmdOpts && exit 0
+    else
+        $reader | $cmd --syntax $lang $cmdOpts && exit 0
+    fi
+}
+
 setopt no_err_exit
-$reader | $filter | $cmd --syntax $lang $cmdOpts && exit 0
+go4it
 # Uh-oh, it didn't work.  Fall back to rendering the file as plain
 lang=txt
-$reader | $filter | $cmd --syntax $lang $cmdOpts && exit 0
+go4it

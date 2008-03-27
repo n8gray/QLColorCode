@@ -68,7 +68,8 @@ NSData *colorizeURL(CFBundleRef bundle, CFURLRef url, int *status, int thumbnail
                                    @"9", @"fontSizePoints",
                                    @"Monaco", @"font",
                                    @"ide-xcode", @"hlTheme", 
-                                   @"", @"extraHLFlags", nil]];
+                                   @"", @"extraHLFlags", 
+                                   @"", @"maxFileSize", nil]];
     [env addEntriesFromDictionary:[defaults persistentDomainForName:myDomain]];
     
     NSString *cmd = [NSString stringWithFormat:

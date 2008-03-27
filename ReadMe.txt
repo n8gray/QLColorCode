@@ -8,8 +8,8 @@ using the Highlight library: <http://www.andre-simon.de/index.html>
 To install the plugin, just drag it to /Library/QuickLook or ~/Library/QuickLook.
 You may need to create that folder if it doesn't already exist.
 
-If you want to change the style of the syntax highlighting, there are several 
-"defaults" commands that could be useful:
+If you want to configure QLColorCode, there are several "defaults" commands 
+that could be useful:
 
 Setting the font:
     defaults write org.n8gray.QLColorCode font Monaco
@@ -19,6 +19,8 @@ the color style (see below):
     defaults write org.n8gray.QLColorCode hlStyle ide-xcode
 any extra command-line flags for Highlight (see below):
     defaults write org.n8gray.QLColorCode extraHLFlags '-l -W'
+the maximum size (in bytes) for previewed files:
+    defaults write org.n8gray.QLColorCode maxFileSize 1000000
 
 The following color styles are included with QLColorCode:
    acid, bipolar, blacknblue, bright, contrast, darkblue, 
