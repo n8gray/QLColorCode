@@ -212,6 +212,8 @@
                         <string>ltx</string>
                         <string>texi</string>
                         <string>ctx</string>
+                        <string>sty</string>
+                        <string>cls</string>
                     </array>
                 </dict>
             </dict>
@@ -386,6 +388,74 @@
                         <string>lisp</string>
                         <string>lsp</string>
                         <string>asd</string>
+                    </array>
+                </dict>
+            </dict>
+            <dict>
+                <key>UTTypeIdentifier</key>
+                <string>org.n8gray.idl</string>
+                <key>UTTypeDescription</key>
+                <string>IDL Source File</string>
+                <key>UTTypeConformsTo</key>
+                <array>
+                    <string>public.source-code</string>
+                </array>
+                <key>UTTypeTagSpecification</key>
+                <dict>
+                    <key>public.filename-extension</key>
+                    <array>
+                        <string>pro</string>
+                    </array>
+                </dict>
+            </dict>
+            <dict>
+                <key>UTTypeIdentifier</key>
+                <string>org.n8gray.verilog</string>
+                <key>UTTypeDescription</key>
+                <string>Verilog Source File</string>
+                <key>UTTypeConformsTo</key>
+                <array>
+                    <string>public.source-code</string>
+                </array>
+                <key>UTTypeTagSpecification</key>
+                <dict>
+                    <key>public.filename-extension</key>
+                    <array>
+                        <string>v</string>
+                    </array>
+                </dict>
+            </dict>
+            <dict>
+                <key>UTTypeIdentifier</key>
+                <string>org.n8gray.vhdl</string>
+                <key>UTTypeDescription</key>
+                <string>VHDL Source File</string>
+                <key>UTTypeConformsTo</key>
+                <array>
+                    <string>public.source-code</string>
+                </array>
+                <key>UTTypeTagSpecification</key>
+                <dict>
+                    <key>public.filename-extension</key>
+                    <array>
+                        <string>vhdl</string>
+                    </array>
+                </dict>
+            </dict>
+            <dict>
+                <key>UTTypeIdentifier</key>
+                <string>org.n8gray.xhtml</string>
+                <key>UTTypeDescription</key>
+                <string>XHTML Source File</string>
+                <key>UTTypeConformsTo</key>
+                <array>
+                    <string>public.source-code</string>
+                </array>
+                <key>UTTypeTagSpecification</key>
+                <dict>
+                    <key>public.filename-extension</key>
+                    <array>
+                        <string>xhtml</string>
                     </array>
                 </dict>
             </dict>
