@@ -1,3 +1,9 @@
+1.0:
+    * Hopefully fixed the crasher bug by keeping us single-threaded
+    * Added Actionscript, Lisp, IDL, Verilog, VHDL, XHTML  (any others I forgot?)
+    * Added .cls and .sty as LaTeX extensions
+    * Added maxFileSize option to keep us from hanging on huge files.
+
 0.4:
     * Added Tcl, Lua, and JSP support
     * Can now configure appearance with "defaults write org.n8gray.QLColorCode ..." commands
