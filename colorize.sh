@@ -27,7 +27,7 @@ hlDir=$rsrcDir/highlight
 cmd=$hlDir/bin/highlight
 cmdOpts=(-I --font $font --quiet --add-data-dir $rsrcDir/override \
          --data-dir $rsrcDir/highlight/share/highlight --style $hlTheme \
-         --font-size $fontSizePoints ${=extraHLFlags})
+         --font-size $fontSizePoints --encoding $textEncoding ${=extraHLFlags})
 
 #for o in $cmdOpts; do echo $o\<br/\>; done 
 

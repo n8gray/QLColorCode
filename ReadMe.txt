@@ -11,6 +11,8 @@ You may need to create that folder if it doesn't already exist.
 If you want to configure QLColorCode, there are several "defaults" commands 
 that could be useful:
 
+Setting the text encoding (default is UTF-8):
+    defaults write org.n8gray.QLColorCode textEncoding UTF-16
 Setting the font:
     defaults write org.n8gray.QLColorCode font Monaco
 the font size:
