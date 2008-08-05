@@ -18,7 +18,7 @@ Setting the font:
 the font size:
     defaults write org.n8gray.QLColorCode fontSizePoints 9
 the color style (see below):
-    defaults write org.n8gray.QLColorCode hlStyle ide-xcode
+    defaults write org.n8gray.QLColorCode hlTheme ide-xcode
 any extra command-line flags for Highlight (see below):
     defaults write org.n8gray.QLColorCode extraHLFlags '-l -W'
 the maximum size (in bytes) for previewed files:
