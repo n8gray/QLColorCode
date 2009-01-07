@@ -72,7 +72,9 @@ missed your favorite language, take a look at the Info.plist file inside the
 plugin bundle and look for the UTImportedTypeDeclarations section.  I
 haven't added all the languages that Highlight can handle because it's rumored
 that having two conflicting UTI declarations for the same file extension can
-cause problems.
+cause problems.  Note that if you do edit the Info.plist file you need to 
+nudge the system to tell it something has changed.  Moving the plugin to the
+desktop then back to its installed location should do the trick.
 
 To build from source, you need the Highlight library.  Download the source and 
 uncompress it somewhere, then make a symbolic link to that location from 
