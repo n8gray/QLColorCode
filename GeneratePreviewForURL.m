@@ -31,7 +31,8 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
     CFBundleRef bundle = QLPreviewRequestGetGeneratorBundle(preview);
     int status;
     NSData *output = colorizeURL(bundle, url, &status, 0);
-    n8log(@"Generated preview html page in %.3f sec", -[startDate timeIntervalSinceNow] );
+    n8log(@"Generated preview html page in %.3f sec", 
+          -[startDate timeIntervalSinceNow] );
     
     if (status != 0 || QLPreviewRequestIsCancelled(preview)) {
 #ifndef DEBUG
@@ -39,12 +40,17 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
 #endif
     }
     // Now let WebKit do its thing
-    CFDictionaryRef emptydict = 
-            (CFDictionaryRef)[[[NSDictionary alloc] init] autorelease];
+    NSString *textEncoding = [[NSUserDefaults standardUserDefaults] 
+                              stringForKey:@"webkitTextEncoding"];
+    if (!textEncoding || [textEncoding length] == 0)
+        textEncoding = @"UTF-8";                
+    CFDictionaryRef properties = 
+            (CFDictionaryRef)[NSDictionary dictionaryWithObject:textEncoding 
+                                                         forKey:(NSString *)kQLPreviewPropertyTextEncodingNameKey];
     QLPreviewRequestSetDataRepresentation(preview, (CFDataRef)output, 
                                           //kUTTypePlainText,
                                           kUTTypeHTML, 
-                                          emptydict);
+                                          properties);
     
 done:
     n8log(@"Finished preview in %.3f sec", -[startDate timeIntervalSinceNow] );

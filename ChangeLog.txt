@@ -1,6 +1,11 @@
 1.1: (in progress)
-    * Added support for "textEncoding" option to set encoding, with default UTF-8.
-
+    * Added support for "textEncoding" option to set encoding for highlight
+      portion of renderer, with default UTF-8.
+    * Added support for "webkitTextEncoding" option to set encoding for webkit
+      portion of renderer, with default UTF-8.
+    
+    XXX: enabled plain-text handling!
+    
 1.0:
     * Hopefully fixed the crasher bug by keeping us single-threaded
     * Added Actionscript, Lisp, IDL, Verilog, VHDL, XHTML  (any others I forgot?)

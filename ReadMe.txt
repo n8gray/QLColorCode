@@ -13,6 +13,7 @@ that could be useful:
 
 Setting the text encoding (default is UTF-8):
     defaults write org.n8gray.QLColorCode textEncoding UTF-16
+    defaults write org.n8gray.QLColorCode webkitTextEncoding UTF-16
 Setting the font:
     defaults write org.n8gray.QLColorCode font Monaco
 the font size:

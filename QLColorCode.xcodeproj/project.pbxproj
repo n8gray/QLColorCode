@@ -189,8 +189,8 @@
 			children = (
 				0EF57F2E0D128219006084D5 /* c.lang */,
 				0EF57F7D0D133C0F006084D5 /* css.lang */,
-				0EF57D6D0D122934006084D5 /* objc.lang */,
 				0EB4960D0D0FC24000E86E0B /* ml.lang */,
+				0EF57D6D0D122934006084D5 /* objc.lang */,
 				0EF57D430D122791006084D5 /* ide-xcode.style */,
 				0EF57E690D125AB2006084D5 /* slateGreen.style */,
 				0E913A090D10B8060067BAD6 /* filetypes.conf */,
