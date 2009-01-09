@@ -551,6 +551,25 @@
     				</array>
     			</dict>
     		</dict>            
+    		<dict>
+    			<key>UTTypeConformsTo</key>
+    			<array>
+    				<string>public.source-code</string>
+    			</array>
+    			<key>UTTypeDescription</key>
+    			<string>Ruby on Rails File</string>
+    			<key>UTTypeIdentifier</key>
+    			<string>org.n8gray.railstemplate</string>
+    			<key>UTTypeTagSpecification</key>
+    			<dict>
+    				<key>public.filename-extension</key>
+    				<array>
+    					<string>rhtml</string>
+                        <string>erb</string>
+                        <string>rjs</string>
+    				</array>
+    			</dict>
+    		</dict>            
             <!-- This is for testing the behavior when highlight fails -->
             <dict>
                 <key>UTTypeIdentifier</key>

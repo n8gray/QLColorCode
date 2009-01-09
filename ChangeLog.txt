@@ -4,6 +4,7 @@
     * Added support for "webkitTextEncoding" option to set encoding for webkit
       portion of renderer, with default UTF-8.
     * Added support for .cs, .el, .jnlp (xml), .e (eiffel), and .vb
+    * Fixed support for verilog files
     XXX: enabled plain-text handling!
     
 1.0:
