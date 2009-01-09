@@ -1,11 +1,14 @@
-1.1: (in progress)
+1.1:
+    * Enabled "safe" plain-text handling.  In other words, files like foo.txt 
+      will be supported, but not files without extensions.  The only way to
+      handle extensionless files is to handle *everything*.  This can be done,
+      but it requires a more defensive style of operation.
     * Added support for "textEncoding" option to set encoding for highlight
       portion of renderer, with default UTF-8.
     * Added support for "webkitTextEncoding" option to set encoding for webkit
       portion of renderer, with default UTF-8.
     * Added support for .cs, .el, .jnlp (xml), .e (eiffel), and .vb
     * Fixed support for verilog files
-    XXX: enabled plain-text handling!
     
 1.0:
     * Hopefully fixed the crasher bug by keeping us single-threaded
