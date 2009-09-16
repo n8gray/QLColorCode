@@ -315,7 +315,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/bin/zsh -x";
-			shellScript = "set err_exit\ncd $PROJECT_DIR/highlight\nexport CFLAGS='-arch i386 -arch ppc'\nexport LDFLAGS=$CFLAGS\nmake\n# Make sure it was built universal\nlipo -info src/highlight | grep -q ppc || exit 1\nlipo -info src/highlight | grep -q i386 || exit 1\nmake \\\n\tDESTDIR=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH \\\n\tPREFIX=/highlight/ \\\n\tinstall\n\n";
+			shellScript = "set err_exit\ncd $PROJECT_DIR/highlight\nexport CFLAGS='-arch i386 -arch ppc -arch x86_64'\nexport LDFLAGS=$CFLAGS\nmake\n# Make sure it was built universal\nlipo -info src/highlight | grep -q ppc || exit 1\nlipo -info src/highlight | grep -q i386 || exit 1\nlipo -info src/highlight | grep -q x86_64 || exit 1\nmake \\\n\tDESTDIR=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH \\\n\tPREFIX=/highlight/ \\\n\tinstall\n\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -432,6 +432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
+					x86_64,
 					ppc,
 					i386,
 				);
