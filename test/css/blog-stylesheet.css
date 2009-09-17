@@ -1,0 +1,307 @@
+/* For help understanding this stuff see:
+    http://www.w3.org/TR/2004/CR-CSS21-20040225/cover.html#minitoc
+
+#f30    reddish (bird)
+#f60    orange  (bedspread)
+#f93    light orange (bird beak)
+
+#630    brown   (wood streaks)
+#c60    light brown (wood)
+#cc0    yellowish   (egg yolk)
+
+#036    dark blue   (streaks on wall)
+#369    light blue  (picture frame)
+
+#666    gray    (wall)
+#ccc    light gray  (shaded white)
+
+#996    Yellowish olive green.
+#50573f Classic n8gray NEdit green.
+
+*/
+
+/* Generic styles */
+body { 
+    font-family: Verdana,Geneva,Arial,Sans-serif; 
+    color: white; 
+    background: black; 
+}
+a { 
+    color: inherit 
+}
+code, pre {
+    color: #036;
+}
+
+/* Header styles */
+.pagetitle        { 
+    font-size: 150%; 
+    font-weight: bold; 
+    color: #f93;
+    text-shadow: rgba(0, 255, 255, 0.7) 0px 0px 10px;
+}
+.pagesubtitle     { 
+    font-size: small; 
+    color: #996; 
+}
+.dateheader       { 
+    font-size: 120%; 
+    font-weight: bold; 
+    /* color: #630; */
+    color: #f93;
+    text-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px; /* h, v, blurriness */
+}
+
+/* Style for gradient row at top */
+.gradrow img {
+    display: block;
+}
+
+/* Content bar styles */
+.contentTable {
+    /* background: yellow; */
+}
+
+
+/* The left-hand (navigation) column */
+.leftbar          {
+    border-width: 0;
+    margin: 0;
+    font-size: 80%; 
+    /* background: #50573f; */
+    background: #996;
+    /* color: white; */
+    color: black;
+    padding: 18px;
+}
+.leftbar a:link:hover, .leftbar a:visited:hover  { 
+    color: #ff0; 
+}
+.leftbar h3 {
+    font-size: 100%;
+    font-weight: bold;
+    /* color: #f93; */
+    color: #630;
+    text-shadow: rgba(255, 96, 0, 0.7) 0px 0px 10px;
+    /* text-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px; */ /* h, v, blurriness */
+}
+.leftbar p {
+    margin-left: 1em;
+}
+
+
+/* The right-hand (main content) column */
+.rightbar         { 
+    max-width: 100em;
+    max-width: 80em;
+    border-width: 0;
+    margin: 0;
+    /* background: #996 url(/images/bee-clear.gif) center fixed no-repeat; */
+    background: #50573f url(/images/bee-clear.gif) center fixed no-repeat;
+    padding: 18px;
+    padding-top: 15px;
+    border: 3px solid #996;
+    border-left-width: 0;
+}
+.rightbar a:link:hover, .rightbar a:visited:hover, 
+.blosxomCalendar a:link:hover, .blosxomCalendar a:visited:hover { 
+    color: #f30;
+}
+
+
+/* Story styles */
+.blosxomCalendar,
+.commentbox,
+.storybox
+{
+    background: #666;
+    color: #333;
+    border-style: solid;
+    border-color: #f60;
+    border-width: 1px;
+    /* font-size: small; */
+    width: 100%;
+    padding: 0px;
+    margin-bottom: 1em;
+    clear: left;
+}
+
+.blosxomCalendarHead,
+.commenttitle,
+.storytitle
+{
+    color: white;
+    background: #f93;
+    font-weight: bold;
+    text-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px; /* h, v, blurriness */
+    width: 100%;
+    padding: 2px;
+}
+
+.commentbody,
+.storybody
+{
+    background: #fff url(/images/bee-blurry.gif) center fixed no-repeat;
+    text-align: justify;
+    padding: 4px;
+}
+
+.commentbody p:first-letter,
+.storybody p:first-letter
+{
+    font-size: 110%;
+    color: #f30;
+}
+
+.commentfooter,
+.storyfooter
+{
+    background: #fff url(/images/bee-blurry.gif) center fixed no-repeat;
+    text-align: right;
+    padding: 4px;
+    font-size: small;
+    font-style: italic;
+}
+
+.storybody img
+{
+    border-style: solid;
+    border-color: #f60;
+    border-width: 1px;
+}
+
+/* comment styles */
+.commentbox {
+    border-color: yellow;
+}
+.indextitle, .commenttitle {
+    background: #50573f
+}
+.commentbody pre { 
+    font: inherit;
+    color: inherit;
+}
+.commentfooter { }
+.comment_msg {
+    border-style: solid;
+    border-color: #f60;
+    border-width: 1px;
+    width: 75%;
+    padding: 0px;
+    margin-bottom: 1em;
+    clear: left;
+    background: red;
+    color: white;
+    font-size: large;
+    text-align: center;
+}
+
+/* Styles for the calendar */
+.blosxomCalendar { /* The calendar table */
+    background: #666;
+    font-size: 90%;
+    text-align: right;
+}
+
+.blosxomCalendarHead {  /* The Month header row */
+    font-size: 90%;
+}
+
+.blosxomCalendarWeekHeader {    /* The Week header row */
+    font-size:   80%;
+    background:  #996;
+    color:       white;
+    font-weight: normal;
+}
+
+.blosxomCalendarEmpty {     /* A non-day cell */
+    background: #666;
+}
+
+.blosxomCalendarBlogged,    /* A day with a blog entry */
+.blosxomCalendarCell,       /* A normal day */
+.blosxomCalendarToday {     /* Today */
+    background: white;
+}
+
+.blosxomCalendarBlogged,
+.blosxomCalendarSpecificDay {   /* The "currently focused" day */
+    font-weight: bold;
+}
+
+.blosxomCalendarSpecificDay {
+    background: yellow;
+}
+
+.blosxomCalendarToday {
+    background: #f93;
+    color: white;
+}
+
+/* Styles for the Category tree: */
+.leftbar ul,
+.headlines,
+.categorytree  {
+    list-style-type: none;
+    /* Prevent over-indentation of the list items */
+    margin-left: 1em;
+    padding-left: 0;
+}
+
+.categorytree_item {}
+
+/* Headlines classes include:
+    headlines, headlines_date, headlines_item */
+
+.headlines_item {
+    margin-bottom: 0.75em;
+}
+
+/* ************************************************************************* */
+/* This is the magic CSS rollover code!                                      */
+/* ************************************************************************* */
+
+#buttonList {
+    /* This style makes a list look nothing like a list.  :-) */
+    list-style-type: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#buttonList > li {  /* The > selects immediate children */
+    /* Pad between the buttons */
+    padding-bottom: 2px;
+}
+
+#buttonList a {
+    /* Make the entire button clickable by turning links into blocks */
+    display: block;
+    height: 36px;
+    width: 150px;
+    line-height: 36px;
+    /* This causes the text to be vertically centered */
+    font-family: Arial Narrow,Helvetica,Sans-serif,Verdana,Geneva;
+    font-size: 14pt;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    /* Disable underline */
+    background-image: url(/images/blankBoth.gif);
+    background-repeat: no-repeat;
+}
+
+#buttonList a:hover,
+#buttonList a#here {
+    /* Highlight on hover, or by default for current page's button */
+    color: yellow;
+    background-position: top left;
+}
+
+#buttonList a,
+#buttonList a:active,
+#buttonList a#here:active {
+    /* Unhighlight unselected buttons, and while clicking */
+    color: #220;
+    background-position: bottom left;
+}

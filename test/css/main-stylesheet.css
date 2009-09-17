@@ -1,0 +1,207 @@
+/* For help understanding this stuff see:
+    http://www.w3.org/TR/2004/CR-CSS21-20040225/cover.html#minitoc
+
+#f30    reddish (bird)
+#f60    orange  (bedspread)
+#f93    light orange (bird beak)
+
+#630    brown   (wood streaks)
+#c60    light brown (wood)
+#cc0    yellowish   (egg yolk)
+
+#036    dark blue   (streaks on wall)
+#369    light blue  (picture frame)
+
+#666    gray    (wall)
+#ccc    light gray  (shaded white)
+
+#996    Yellowish olive green.
+#50573f Classic n8gray NEdit green.
+
+*/
+
+/* Generic styles */
+body { 
+    background: black; 
+}
+a { 
+    color: inherit 
+}
+
+a:link:hover, a:visited:hover {
+    color: #f30
+}
+
+/* Style for gradient row at top */
+.gradrow img {
+    display: block;
+}
+
+/* This is a trick for getting something to center vertically.
+   see: http://www.wpdfd.com/editorial/thebox/deadcentre4.html */
+#horizon {
+    /* A 1px-high, full-width box halfway down the screen */
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    width: 100%;
+    height: 1px;
+    overflow: visible;  /* This is critical! */
+    display: block;
+}
+
+#topdiv {
+    /* The "absolute" positioning of the nested table is relative to #horizon */
+    position: absolute;
+    bottom: -175px;          /* Half the height */
+    left: 50%;              /* Put the left edge in the center, except... */
+    margin-left: -150px;    /* Move the left edge back so image is centered */
+    
+    background-image: url("/images/redlizard_duncan_parks-tail.png");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    
+    padding-bottom: 70px;   /* Ensure the bottom of the tail is visible */
+}
+
+#lizardpanel {
+    background: #50573f;
+    /* background: #996; */
+    /* background: white; */
+    border: solid #996;
+    border-left-width: 3px;
+    border-bottom-width: 3px;
+    border-right-width: 0;
+    border-top-width: 0;
+    width: 121px;
+    overflow: visible;
+}
+
+#notail {
+    position: absolute;
+    bottom: 0px;
+    z-index: 9999;
+}
+
+/* #tail {
+    position: absolute;
+    bottom: -30px;
+    z-index: 1;
+} */
+
+.rtpanel {
+    background-repeat: no-repeat;
+    background-position: left;
+}
+.navtable {
+    z-index: 5000;
+}
+
+.navtitle_l,
+.navtitle_r {
+    color: #f93;
+    background: #50573f;
+    font-weight: bold;
+    font-family: Arial,Helvetica,Sans-Serif;
+    text-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px; /* h, v, blurriness */
+    padding: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-align: center;
+    border: 3px solid #996;
+    border-bottom-width: 0;
+}
+.navtitle_r {
+    border-left-width: 0;
+}
+.navtitle_l {
+    border-right-width: 0;
+}
+    
+
+.navcell {
+    padding: 4px;
+    background: #996;
+    color: white;
+    text-align: center;
+}
+
+/* Style the button list differently on the front page */
+.navcell #buttonList a {
+    background-image: url(/images/blankBoth.gif);
+
+}
+
+/* The table inside the gradient, containing the button bar and content. */
+.innerTable {
+    background-color: #996;
+}
+
+/* The left column (with the button bar) */
+.leftcol {
+    padding: 18px;
+}
+
+/* The right column (with the content) */
+.rightcol {
+    background-color: #50573f;
+    padding: 18px;
+    padding-top: 15px;
+    border: 3px solid #996;
+    border-left-width: 0;
+
+    color: white;
+}
+.rightcol h3 {
+    color: #f93;
+}
+.rightcol a {
+    color: yellow;
+}
+
+/* ************************************************************************* */
+/* This is the magic CSS rollover code!                                      */
+/* ************************************************************************* */
+
+#buttonList {
+    /* This style makes a list look nothing like a list.  :-) */
+    list-style-type: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#buttonList > li {  /* The > selects immediate children */
+    /* Pad between the buttons */
+    padding-bottom: 2px;
+}
+
+#buttonList a {
+    /* Make the entire button clickable by turning links into blocks */
+    display: block;
+    height: 36px;
+    width: 150px;
+    line-height: 36px;  /* This causes the text to be vertically centered */
+    font-family: Arial Narrow,Helvetica,Sans-serif,Verdana,Geneva;
+    font-size: 14pt;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;  /* Disable underline */
+    background-image: url(/images/blankBoth.gif);
+    background-repeat: no-repeat;
+}
+
+#buttonList a:hover, 
+#buttonList a#here {
+    /* Highlight on hover, or by default for current page's button */
+    color: yellow;
+    background-position: top left;
+}
+
+#buttonList a, 
+#buttonList a:active, 
+#buttonList a#here:active {
+    /* Unhighlight unselected buttons, and while clicking */
+    color: #220;
+    background-position: bottom left;
+}
