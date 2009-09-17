@@ -19,6 +19,8 @@
 # Fail immediately on failure of sub-command
 setopt err_exit
 
+#echo QLColorCode Devel Version!
+
 rsrcDir=$1
 target=$2
 thumb=$3
@@ -26,7 +28,8 @@ thumb=$3
 hlDir=$rsrcDir/highlight
 cmd=$hlDir/bin/highlight
 cmdOpts=(-I --font $font --quiet --add-data-dir $rsrcDir/override \
-         --data-dir $rsrcDir/highlight/share/highlight --style $hlTheme \
+         --data-dir $rsrcDir/highlight/share/highlight \
+         --add-config-dir $rsrcDir/override/config --style $hlTheme \
          --font-size $fontSizePoints --encoding $textEncoding ${=extraHLFlags})
 
 #for o in $cmdOpts; do echo $o\<br/\>; done 
@@ -59,6 +62,9 @@ case $target in
             lang=objc
         fi
         ;;
+    *.groovy )  
+        lang=java  
+        ;;  
     * ) 
         lang=${target##*.}
     ;;

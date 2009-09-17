@@ -1,3 +1,10 @@
+2.0:
+    * Upgrade to highlight 2.12 -- This was long overdue.  It's nice not to 
+      have to patch highlight anymore!
+    * Removed customized .css language definition -- it was fixed upstream.
+    * Build for x86_64 in addition to i386 and ppc
+    * Added support for Groovy,
+
 1.1:
     * Enabled "safe" plain-text handling.  In other words, files like foo.txt 
       will be supported, but not files without extensions.  The only way to

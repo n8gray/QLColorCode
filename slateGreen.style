@@ -2,7 +2,7 @@
 # See README in the highlight directory for documentation.
 
 $DEFAULTCOLOUR=#ffffff
-$BGCOLOUR=50 57 3F
+$BGCOLOUR=#50573F
 $FONTSIZE=11
 # Keywords
 $KW-GROUP(kwa)=#EEA9B8 bold

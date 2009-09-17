@@ -19,32 +19,32 @@
 
 #### REMEMBER: \s includes \n!
 
-$KW_LIST(kwa)=goto break return continue asm case default if else switch while for do sizeof typeof
+$KEYWORDS(kwa)=goto break return continue asm case default if else switch while for do sizeof typeof
 typedef inline stdcall auto cdecl class const_cast delete dynamic_cast explicit
 extern friend goto inline mutable namespace new operator pascal register reinterpret_cast private
 protected public static_cast template this throw try catch typeid using virtual volatile true false
 id Class SEL IMP BOOL oneway in out inout bycopy byref self super nil NIL TRUE FALSE
 
-$KW_LIST(kwb)=int long short char void signed unsigned float double size_t wchar_t ptrdiff_t
+$KEYWORDS(kwb)=int long short char void signed unsigned float double size_t wchar_t ptrdiff_t
 sig_atomic_t fpos_t clock_t time_t va_list jmp_buf FILE DIR div_t ldiv_t static register auto
 volatile extern const bool struct union enum
 
 #$KW_PREFIX(kwa)=@
 
-$KW_RE(kwa)=regex(@\w+)
+$KEYWORDS(kwa)=regex(@\w+)
 
-$KW_RE(fndef)=regex(^(?!typedef)[_a-zA-Z][*\w\t ]*(?:\n|[ \t])?[ \t]*[_a-zA-Z]\w*[ \t]*(?=\((?!\s*\*))|^[ \t]*[\-+][ \t]*(?:\([ \t]*[_a-zA-Z]\w*[* \t]*\))?[ \t]*[_a-zA-Z]\w*(?=[ \t]*(?:\n[ \t]*)?(?=[:{])))
+$KEYWORDS(fndef)=regex(^(?!typedef)[_a-zA-Z][*\w\t ]*(?:\n|[ \t])?[ \t]*[_a-zA-Z]\w*[ \t]*(?=\((?!\s*\*))|^[ \t]*[\-+][ \t]*(?:\([ \t]*[_a-zA-Z]\w*[* \t]*\))?[ \t]*[_a-zA-Z]\w*(?=[ \t]*(?:\n[ \t]*)?(?=[:{])))
 
 # Tmp. for debugging:
-#$KW_RE(fndef)=regex(([_a-zA-Z]\w*)\s*(?:[:{]))
+#$KEYWORDS(fndef)=regex(([_a-zA-Z]\w*)\s*(?:[:{]))
 
-$KW_RE(kwd)=regex((\w+?)\s*\()
+$KEYWORDS(kwd)=regex((\w+?)\s*\()
 
 # A method call target is any identifier inside an open bracket followed by 
 # another identifier
-$KW_RE(callr)=regex((?<=\[)\s*\w+(?=\s+[_a-zA-Z]))
+$KEYWORDS(callr)=regex((?<=\[)\s*\w+(?=\s+[_a-zA-Z]))
 
-$KW_RE(str)=regex(@(?="))
+$KEYWORDS(str)=regex(@(?="))
 
 $STRINGDELIMITERS=" '
 

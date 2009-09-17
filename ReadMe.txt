@@ -2,6 +2,13 @@ QLColorCode
 ===========
 <http://code.google.com/p/qlcolorcode/>
 
+===============================================================================
+IMPORTANT NOTE FOR XCODE 3.2 (SHIPPED WITH SNOW LEOPARD) USERS:
+If you are running Xcode 3.2 or higher you will probably not see QLColorCode's 
+output.  See here for details:
+    http://code.google.com/p/qlcolorcode/issues/detail?id=46
+===============================================================================
+
 This is a Quick Look plugin that renders source code with syntax highlighting,
 using the Highlight library: <http://www.andre-simon.de/index.html>
 
@@ -56,14 +63,13 @@ Here are some useful 'highlight' command-line flags (from the man page):
               statements
 
        -W, --wrap
-              wrap long lines (use with caution)
+              wrap long lines
 
        -z, --zeroes
               fill leading space of line numbers with zeroes
 
-       --kw-case=<upper|lower>
-              output  all keywords in upper/lower case if language is not
-              case sensitive
+       --kw-case=<upper|lower|capitalize>
+              control case of case insensitive keywords
 
 Highlight can handle lots and lots of languages, but this plugin will only be 
 invoked for file types that the OS knows are type "source-code".  Since the OS
@@ -87,6 +93,7 @@ After that you should be able to build as usual from Xcode.
 As an aside, by changing colorize.sh you can use this plugin to render any file
 type that you can convert to HTML.  Have fun, and let me know if you do anything
 cool!
+
 
 Cheers,
 -n8
