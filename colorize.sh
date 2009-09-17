@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # This code is licensed under the GPL v2.  See LICENSE.txt for details.
-  
+
 # colorize.sh
 # QLColorCode
 #
@@ -58,15 +58,24 @@ case $target in
         # look for a matlab-style comment in the first 10 lines, otherwise
         # assume objective-c.  If you never use matlab or never use objc,
         # you might want to hardwire this one way or the other
-        if head -n 10 $target | grep -q "^ *%" &> /dev/null; then
+        if head -n 10 $target | grep -q "^[ 	]*%" &> /dev/null; then
             lang=m
         else
             lang=objc
         fi
         ;;
     *.groovy )  
-        lang=java  
-        ;;  
+        lang=java
+        ;;
+    *.pro )
+        # Can be either IDL or Prolog.  Prolog uses /* */ and % for comments.
+        # IDL uses ;
+        if head -n 10 $target | grep -q "^[ 	]*;" &> /dev/null; then
+            lang=idlang
+        else
+            lang=pro
+        fi
+        ;;
     * ) 
         lang=${target##*.}
     ;;
