@@ -1,9 +1,12 @@
 2.0:
-    * Upgrade to highlight 2.12 -- This was long overdue.  It's nice not to 
-      have to patch highlight anymore!
+    * Added a note about conflict with Xcode 3.2's source code QL plugin.  If
+      you're having problems with QLCC on Snow Leopard please read it!
+    * Fixed a bug that caused QLCC to fail on files whose names contained '%'.
+    * Added support for Scala, Groovy, Interactive Data Language, and Coldfusion
+    * Upgrade highlight from 2.6.6 to 2.12 -- This was long overdue.  It's nice
+      not to have to patch highlight anymore!
     * Removed customized .css language definition -- it was fixed upstream.
     * Build for x86_64 in addition to i386 and ppc
-    * Added support for Groovy,
 
 1.1:
     * Enabled "safe" plain-text handling.  In other words, files like foo.txt 

@@ -570,25 +570,59 @@
 				</array>
 			</dict>
 		</dict>
-        
-	<dict>
-		<key>UTTypeConformsTo</key>
-		<array>
-			<string>public.source-code</string>
-		</array>
-		<key>UTTypeDescription</key>
-		<string>Groovy Source Code</string>
-		<key>UTTypeIdentifier</key>
-		<string>org.codehaus.groovy-source</string>
-		<key>UTTypeTagSpecification</key>
 		<dict>
-			<key>public.filename-extension</key>
+			<key>UTTypeConformsTo</key>
 			<array>
-				<string>groovy</string>
+				<string>public.source-code</string>
 			</array>
+			<key>UTTypeDescription</key>
+			<string>Groovy Source Code</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.codehaus.groovy-source</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>groovy</string>
+				</array>
+			</dict>
 		</dict>
-	</dict>	
-        
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.source-code</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Scala Source Code</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.scala-lang.scala</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>scala</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.source-code</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Coldfusion Source Code</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.adobe.coldfusion</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>cfc</string>
+					<string>cfm</string>
+					<string>cfml</string>
+				</array>
+			</dict>
+		</dict>
 	</array>
 </dict>
 </plist>

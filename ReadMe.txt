@@ -87,9 +87,6 @@ To build from source, you need the Highlight library.  Download the source and
 uncompress it somewhere, then make a symbolic link to that location from 
 ./highlight
 
-You'll also need to apply the relevant patch-highlight-*.diff patches. 
-After that you should be able to build as usual from Xcode.
-
 As an aside, by changing colorize.sh you can use this plugin to render any file
 type that you can convert to HTML.  Have fun, and let me know if you do anything
 cool!

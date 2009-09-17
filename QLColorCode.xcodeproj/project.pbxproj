@@ -244,7 +244,7 @@
 				0E913A110D10B84D0067BAD6 /* Copy .conf Files */,
 				0E9139D70D10A8320067BAD6 /* Install highlight */,
 				0ECBBA6F0CFCA39E00416538 /* Copy to Library */,
-				0E1280381061C3EA0078EC05 /* Reset qlmanage */,
+				0E1280381061C3EA0078EC05 /* Reset quicklookd */,
 			);
 			buildRules = (
 			);
@@ -300,14 +300,14 @@
 			shellPath = "/bin/zsh -x";
 			shellScript = "# shell script goes here\nif [ $BUILD_STYLE != \"Release\" ]; then\n   echo \"Error: Must use Release build style\"\n   exit 1\nfi\n\ncd $PROJECT_DIR\nmkdir -vp release\ncd release\npkgDir=QLColorCode-$CURRENT_PROJECT_VERSION\nrm -rf $pkgDir\nmkdir $pkgDir\ncp -rp $TARGET_BUILD_DIR/*.qlgenerator $pkgDir\ncp ../ReadMe.txt $pkgDir\ncp ../LICENSE.txt $pkgDir\ncp ../ChangeLog.txt $pkgDir\n# For some reason Xcode has been producing world-writable output on occasion\nchmod -R o-w $pkgDir\ntar cvzf $pkgDir.tgz $pkgDir\nopen $PROJECT_DIR/release";
 		};
-		0E1280381061C3EA0078EC05 /* Reset qlmanage */ = {
+		0E1280381061C3EA0078EC05 /* Reset quicklookd */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Reset qlmanage";
+			name = "Reset quicklookd";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,14 +397,12 @@
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
 				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_NAME = QLColorCode;
-				VALID_ARCHS = "i386 ppc";
 				WRAPPER_EXTENSION = qlgenerator;
 				ZERO_LINK = YES;
 			};
@@ -418,12 +416,10 @@
 					"$(inherited)",
 					"\"$(DEVELOPER_DIR)/SDKs/MacOSX10.5.sdk/System/Library/Frameworks\"",
 				);
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
 				PRODUCT_NAME = QLColorCode;
-				VALID_ARCHS = "i386 ppc";
 				WRAPPER_EXTENSION = qlgenerator;
 			};
 			name = Release;
@@ -444,9 +440,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
-					x86_64,
 					ppc,
 					i386,
+					x86_64,
 				);
 				CURRENT_PROJECT_VERSION = 2.0.0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
