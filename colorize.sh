@@ -25,6 +25,8 @@ rsrcDir=$1
 target=$2
 thumb=$3
 
+#echo target is $target
+
 hlDir=$rsrcDir/highlight
 cmd=$hlDir/bin/highlight
 cmdOpts=(-I --font $font --quiet --add-data-dir $rsrcDir/override \

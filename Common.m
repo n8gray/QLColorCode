@@ -48,7 +48,9 @@ NSData *runTask(NSString *script, NSDictionary *env, int *exitCode) {
 NSString *pathOfURL(CFURLRef url)
 {
     NSString *targetCFS = [[(NSURL *)url absoluteURL] path];
-    return [targetCFS stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    n8log(@"targetCFS = %@", targetCFS);
+    //return [targetCFS stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    return targetCFS;
 }
 
 NSData *colorizeURL(CFBundleRef bundle, CFURLRef url, int *status, int thumbnail)
@@ -58,7 +60,9 @@ NSData *colorizeURL(CFBundleRef bundle, CFURLRef url, int *status, int thumbnail
     //n8log(@"rsrcDirURL = %@", CFURLGetString(rsrcDirURL));
     NSString *rsrcEsc = pathOfURL(rsrcDirURL);
     CFRelease(rsrcDirURL);
+    n8log(@"url = %@", url);
     NSString *targetEsc = pathOfURL(url);
+    n8log(@"targetEsc = %@", targetEsc);
     
     // Set up preferences
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
