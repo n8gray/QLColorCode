@@ -25,7 +25,8 @@ NSData *runTask(NSString *script, NSDictionary *env, int *exitCode) {
     NSPipe *pipe;
     pipe = [NSPipe pipe];
     [task setStandardOutput: pipe];
-    [task setStandardError: pipe];
+    // Let stderr go to the usual place
+    //[task setStandardError: pipe];
     
     NSFileHandle *file;
     file = [pipe fileHandleForReading];
@@ -69,6 +70,9 @@ NSData *colorizeURL(CFBundleRef bundle, CFURLRef url, int *status, int thumbnail
     NSMutableDictionary *env = [NSMutableDictionary dictionaryWithDictionary:
                                 [[NSProcessInfo processInfo] environment]];
     [env addEntriesFromDictionary:[NSDictionary dictionaryWithObjectsAndKeys:
+#ifdef DEBUG
+                                   @"1", @"qlcc_debug",
+#endif
                                    @"9", @"fontSizePoints",
                                    @"Monaco", @"font",
                                    @"ide-xcode", @"hlTheme", 
@@ -85,7 +89,8 @@ NSData *colorizeURL(CFBundleRef bundle, CFURLRef url, int *status, int thumbnail
     
     output = runTask(cmd, env, status);
     if (*status != 0) {
-        NSLog(@"QLColorCode: colorize.sh failed with exit code %d", *status);
+        NSLog(@"QLColorCode: colorize.sh failed with exit code %d.  Command was (%@).", 
+              *status, cmd);
     }
     return output;
 }

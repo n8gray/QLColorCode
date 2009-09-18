@@ -1,3 +1,12 @@
+2.0.1:
+    * Corrected build of Highlight to run on Leopard.
+    * Stop redirecting stdout of colorize.sh to stdin.  Error output will appear
+      in the console instead of the preview.
+    * Added qlcc_debug option.  To enable, use:
+            defaults write org.n8gray.qlcolorcode qlcc_debug 1
+      To disable, use:
+            defaults delete org.n8gray.qlcolorcode qlcc_debug
+
 2.0:
     * Added a note about conflict with Xcode 3.2's source code QL plugin.  If
       you're having problems with QLCC on Snow Leopard please read it!

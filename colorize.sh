@@ -19,12 +19,17 @@
 # Fail immediately on failure of sub-command
 setopt err_exit
 
-#echo QLColorCode Devel Version!
-
 rsrcDir=$1
 target=$2
 thumb=$3
 
+debug () {
+    if [ "x$qlcc_debug" != "x" ]; then if [ "x$thumb" = "x0" ]; then
+        echo "QLColorCode: $@" 1>&2
+    fi; fi
+}
+
+debug Starting colorize.sh
 #echo target is $target
 
 hlDir=$rsrcDir/highlight
@@ -36,8 +41,10 @@ cmdOpts=(-I --font $font --quiet --add-data-dir $rsrcDir/override \
 
 #for o in $cmdOpts; do echo $o\<br/\>; done 
 
+debug Setting reader
 reader=(cat $target)
 
+debug Handling special cases
 case $target in
     *.graffle )
         # some omnigraffle files are XML and get passed to us.  Ignore them.
@@ -80,8 +87,10 @@ case $target in
         lang=${target##*.}
     ;;
 esac
+debug Resolved $target to language $lang
 
 go4it () {
+    debug Generating the preview
     if [ $thumb = "1" ]; then
         $reader | head -n 100 | head -c 20000 | $cmd --syntax $lang $cmdOpts && exit 0
     elif [ -n "$maxFileSize" ]; then
@@ -92,7 +101,11 @@ go4it () {
 }
 
 setopt no_err_exit
+debug First try...
 go4it
 # Uh-oh, it didn't work.  Fall back to rendering the file as plain
+debug First try failed, second try...
 lang=txt
 go4it
+debug Reached the end of the file.  That should not happen.
+exit 101
