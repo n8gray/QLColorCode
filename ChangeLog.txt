@@ -1,3 +1,7 @@
+2.0.2:
+    * Modified ReadMe.txt to include the latest info on the Xcode 3.2 conflict
+    * Include a link to Andre Simon's page with previews of color styles
+
 2.0.1:
     * Corrected build of Highlight to run on Leopard.
     * Stop redirecting stdout of colorize.sh to stdin.  Error output will appear

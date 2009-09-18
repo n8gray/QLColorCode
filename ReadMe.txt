@@ -5,8 +5,8 @@ QLColorCode
 ===============================================================================
 IMPORTANT NOTE FOR XCODE 3.2 (SHIPPED WITH SNOW LEOPARD) USERS:
 If you are running Xcode 3.2 or higher you will probably not see QLColorCode's 
-output.  See here for details:
-    http://code.google.com/p/qlcolorcode/issues/detail?id=46
+output unless you disable Xcode's built-in source code qlgenerator.  
+See the end of this file for details.
 ===============================================================================
 
 This is a Quick Look plugin that renders source code with syntax highlighting,
@@ -22,24 +22,22 @@ Setting the text encoding (default is UTF-8).  Two settings are required.  The
 first sets Highlight's encoding, the second sets Webkit's:
     defaults write org.n8gray.QLColorCode textEncoding UTF-16
     defaults write org.n8gray.QLColorCode webkitTextEncoding UTF-16
+    
 Setting the font:
     defaults write org.n8gray.QLColorCode font Monaco
+    
 the font size:
     defaults write org.n8gray.QLColorCode fontSizePoints 9
-the color style (see below):
+    
+the color style (see http://www.andre-simon.de/dokuwiki/doku.php?id=theme_examples
+or try slateGreen to see how I roll):
     defaults write org.n8gray.QLColorCode hlTheme ide-xcode
+    
 any extra command-line flags for Highlight (see below):
     defaults write org.n8gray.QLColorCode extraHLFlags '-l -W'
+    
 the maximum size (in bytes) for previewed files:
     defaults write org.n8gray.QLColorCode maxFileSize 1000000
-
-The following color styles are included with QLColorCode:
-   acid, bipolar, blacknblue, bright, contrast, darkblue, 
-   darkness, desert, easter, emacs, golden, greenlcd, ide-anjuta, 
-   ide-codewarrior, ide-devcpp, ide-eclipse, ide-kdev, ide-msvcpp, ide-xcode, 
-   kwrite, lucretia, matlab, moe, navy, nedit, neon, night, orion, pablo, 
-   peachpuff, print, rand01, seashell, slateGreen, the, typical, vampire, 
-   vim-dark, vim, whitengrey, zellner
 
 Here are some useful 'highlight' command-line flags (from the man page):
        -F, --reformat=<style>
@@ -91,6 +89,45 @@ As an aside, by changing colorize.sh you can use this plugin to render any file
 type that you can convert to HTML.  Have fun, and let me know if you do anything
 cool!
 
+====================================================================
+Important information on using QLColorCode with Xcode v3.2 and later
+====================================================================
+
+The most up-to-date copy of this info will be found here:
+  http://code.google.com/p/qlcolorcode/wiki/ImportantNoteForXcodeUsers
+
+Xcode 3.2 (the version shipped with Snow Leopard) includes a Quick Look plugin 
+that highlights source code. It only highlights a few languages, so you probably
+still want to use QLColorCode. However, the Quick Look server tends to pick the
+Xcode plugin over QLCC. This means that for any source code file aside from .c,
+.m, and the other languages that Xcode understands you'll see a plain text
+preview with no highlighting. To get QLCC to work properly you'll need to 
+disable the Xcode plugin.
+
+Details
+-------
+
+The Xcode plugin is installed at:
+
+/Developer/Applications/Xcode.app/Contents/Library/QuickLook/SourceCode.qlgenerator
+The simplest way to disable it is to open Terminal.app and run these commands:
+
+  f=/Developer/Applications/Xcode.app/Contents/Library/QuickLook/SourceCode.qlgenerator
+  sudo mv $f $f.disabled
+
+This will rename the plugin to SourceCode.qlgenerator.disabled, which will 
+prevent it from being loaded by quicklookd.
+
+A Note on Code Signing
+----------------------
+
+The Xcode application is cryptographically signed. Disabling the 
+SourceCode.qlgenerator plugin will NOT invalidate the signature. You can 
+confirm this by using the codesign command after disabling the plugin:
+
+  [n8gray@golux]% codesign -vv /Developer/Applications/Xcode.app
+  /Developer/Applications/Xcode.app: valid on disk
+  /Developer/Applications/Xcode.app: satisfies its Designated Requirement
 
 Cheers,
 -n8
