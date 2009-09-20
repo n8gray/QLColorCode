@@ -1,0 +1,45 @@
+--- highlight/filetypes.conf	2009-09-07 13:33:02.000000000 -0700
++++ filetypes.conf	2009-09-19 23:34:53.000000000 -0700
+@@ -11,6 +11,8 @@
+ # andre.simon1@gmx.de
+ # http:/www.andre-simon.de/
+ 
++# Modified by Nathan Gray <n8@n8gray.org>
++
+ $ext(ada)=adb ads a gnad
+ $ext(ampl)=dat run
+ $ext(amtrix)=s4 s4t s4h hnd t4
+@@ -19,7 +21,7 @@
+ $ext(ats)=dats
+ $ext(aspect)=was wud
+ $ext(bat)=cmd
+-$ext(c)=c++ cpp cxx cc h hh hxx hpp
++$ext(c)=c++ cpp cxx cc h hh hxx hpp pch cp pch++
+ $ext(cfc)=cfm
+ $ext(cob)=cbl
+ $ext(diff)=patch
+@@ -30,12 +32,13 @@
+ $ext(f90)=f95
+ $ext(haskell)=hs icl
+ $ext(java)=groovy grv
+-$ext(lisp)=cl clisp el lsp sbcl
++$ext(lisp)=asd cl clisp el lsp sbcl
+ $ext(make)=mak mk
+ $ext(mib)=smi
+-$ext(ml)=mli ocaml
++$ext(ml)=mli ocaml mll mly
+ $ext(mod3)=mod m3 i3 ig mg
+ $ext(oberon)=ooc
++$ext(objc)=mm
+ $ext(php)=php3 php4 php5 php6
+ $ext(pike)=pmod
+ $ext(pl1)=ff fp fpp rpp sf sp spb spp sps wp wf wpp wps wpb bdy spe
+@@ -43,7 +46,7 @@
+ $ext(progress)=p i w
+ $ext(rb)=ruby pp rjs
+ $ext(rexx)=rex rx the
+-$ext(sh)=bash ebuild eclass
++$ext(sh)=bash ebuild eclass command
+ $ext(smalltalk)=st gst sq
+ $ext(sybase)=sp
+ $ext(tcl)=wish itcl

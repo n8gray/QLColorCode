@@ -2,8 +2,8 @@ Based on highlight: http://www.andre-simon.de/index.html
 (Was based on pygments: http://pygments.org)
 
 When installing a new version of highlight, make sure to update the 
-"highlight" symlink in the project dir.  Also patch with 
-highlight-2.6.6-getConfDir.diff if necessary.
+"highlight" symlink in the project dir.  Also merge in any updates to 
+filetypes.conf
 
 The version is handled in the Current Project Version variable in the project.
 
