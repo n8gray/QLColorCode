@@ -37,7 +37,7 @@ cmd=$hlDir/bin/highlight
 cmdOpts=(-I --font $font --quiet --add-data-dir $rsrcDir/override \
          --data-dir $rsrcDir/highlight/share/highlight \
          --add-config-dir $rsrcDir/override/config --style $hlTheme \
-         --font-size $fontSizePoints --encoding $textEncoding ${=extraHLFlags})
+         --font-size $fontSizePoints --encoding $textEncoding ${=extraHLFlags} --validate-input)
 
 #for o in $cmdOpts; do echo $o\<br/\>; done 
 
