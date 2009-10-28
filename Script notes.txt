@@ -1,0 +1,14 @@
+To package one of these scripts:
+1.  open it in Script Editor
+2.  Save As, using File Format: Application, with Startup Screen checked
+3.  Copy and paste the appropriate description below into the "Description" 
+    pane in Script Editor
+4.  Save
+5.  Package & distribute the resulting app bundle
+
+
+Descriptions:
+
+This script will disable the Quick Look plugin shipped with XCode by renaming it, adding a ".disabled" suffix.
+
+This script will restore the Quick Look plugin shipped with XCode, undoing the effects of the "Disable XCode QL Plugin" application.
