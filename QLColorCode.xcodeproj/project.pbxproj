@@ -31,6 +31,7 @@
 		0EB496B10D0FC70D00E86E0B /* ml.lang in Copy .lang Files */ = {isa = PBXBuildFile; fileRef = 0EB4960D0D0FC24000E86E0B /* ml.lang */; };
 		0EC047970CFBDADF009C986E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC047960CFBDADF009C986E /* Foundation.framework */; };
 		0ECBBA6C0CFCA37500416538 /* QLColorCode.qlgenerator in Copy to Library */ = {isa = PBXBuildFile; fileRef = 8D576316048677EA00EA77CD /* QLColorCode.qlgenerator */; };
+		0EE90E861098CE5800468467 /* Script notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0EE90E851098CE5800468467 /* Script notes.txt */; };
 		0EF57D440D122791006084D5 /* ide-xcode.style in Copy .style Files */ = {isa = PBXBuildFile; fileRef = 0EF57D430D122791006084D5 /* ide-xcode.style */; };
 		0EF57D6E0D122934006084D5 /* objc.lang in Copy .lang Files */ = {isa = PBXBuildFile; fileRef = 0EF57D6D0D122934006084D5 /* objc.lang */; };
 		0EF57E6A0D125AB2006084D5 /* slateGreen.style in Copy .style Files */ = {isa = PBXBuildFile; fileRef = 0EF57E690D125AB2006084D5 /* slateGreen.style */; };
@@ -120,6 +121,9 @@
 		0EC047F20CFC000A009C986E /* Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes.txt; sourceTree = "<group>"; };
 		0ECBBB360CFCF98600416538 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		0ECBBB5D0CFD447E00416538 /* colorize.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = colorize.sh; sourceTree = "<group>"; };
+		0EE90E6F1098BE1E00468467 /* Disable XCode QL Plugin.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.scpt; path = "Disable XCode QL Plugin.scpt"; sourceTree = "<group>"; };
+		0EE90E841098CDDF00468467 /* Restore XCode QL Plugin.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.scpt; path = "Restore XCode QL Plugin.scpt"; sourceTree = "<group>"; };
+		0EE90E851098CE5800468467 /* Script notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Script notes.txt"; sourceTree = "<group>"; };
 		0EF57D430D122791006084D5 /* ide-xcode.style */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ide-xcode.style"; sourceTree = "<group>"; };
 		0EF57D6D0D122934006084D5 /* objc.lang */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = objc.lang; sourceTree = "<group>"; };
 		0EF57E4D0D123DD0006084D5 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 		089C166AFE841209C02AAC07 /* QLColorCode */ = {
 			isa = PBXGroup;
 			children = (
+				0EE90E7F1098C84600468467 /* Scripts */,
 				0EC047F20CFC000A009C986E /* Notes.txt */,
 				0ECBBB360CFCF98600416538 /* ReadMe.txt */,
 				0E51C65F0D04E492007853CB /* ChangeLog.txt */,
@@ -207,6 +212,16 @@
 				0ECBBB5D0CFD447E00416538 /* colorize.sh */,
 			);
 			name = Source;
+			sourceTree = "<group>";
+		};
+		0EE90E7F1098C84600468467 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				0EE90E851098CE5800468467 /* Script notes.txt */,
+				0EE90E6F1098BE1E00468467 /* Disable XCode QL Plugin.scpt */,
+				0EE90E841098CDDF00468467 /* Restore XCode QL Plugin.scpt */,
+			);
+			name = Scripts;
 			sourceTree = "<group>";
 		};
 		19C28FB6FE9D52B211CA2CBB /* Products */ = {
@@ -281,6 +296,7 @@
 			files = (
 				0EB495D50D0FB13C00E86E0B /* colorize.sh in Resources */,
 				8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */,
+				0EE90E861098CE5800468467 /* Script notes.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
