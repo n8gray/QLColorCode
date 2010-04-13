@@ -71,9 +71,6 @@ case $target in
             lang=objc
         fi
         ;;
-    *.groovy )  
-        lang=java
-        ;;
     *.pro )
         # Can be either IDL or Prolog.  Prolog uses /* */ and % for comments.
         # IDL uses ;
