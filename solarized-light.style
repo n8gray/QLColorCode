@@ -1,0 +1,20 @@
+# solarized-light.style
+# This File is part of highlight, a universal source code converter.
+# See README in the highlight directory for documentation.
+
+$DEFAULTCOLOUR=#657b83
+$BGCOLOUR=#fdf6e3
+$FONTSIZE=10
+$KW-GROUP(kwa)=#cb4b16
+$KW-GROUP(kwb)=#859900
+$KW-GROUP(kwc)=#cb4b16
+$KW-GROUP(kwd)=#586e75
+$NUMBER=#dc322f
+$ESCAPECHAR=#6c71c4
+$STRING=#dc322f
+$STRING-DIRECTIVE=#dc322f
+$COMMENT=#93a1a1
+$DIRECTIVE=#6c71c4
+$LINE=#268bd2
+$SYMBOL=#586e75
+$MARK-LINE=#073642
