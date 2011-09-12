@@ -30,7 +30,8 @@ the font size:
     defaults write org.n8gray.QLColorCode fontSizePoints 9
     
 the color style (see http://www.andre-simon.de/dokuwiki/doku.php?id=theme_examples
-or try slateGreen to see how I roll):
+or try slateGreen to see how I roll.  Also included are solarized-light and solarized-dark
+as seen at http://ethanschoonover.com/solarized):
     defaults write org.n8gray.QLColorCode hlTheme ide-xcode
     
 any extra command-line flags for Highlight (see below):
