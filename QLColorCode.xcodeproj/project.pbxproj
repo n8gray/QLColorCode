@@ -297,8 +297,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/bin/zsh -x";
-			shellScript = "set err_exit\ncd $PROJECT_DIR/highlight\nX='-arch i386 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5'\nexport CFLAGS=$X\nexport LDFLAGS=$X\nmake -j 2\n# Make sure it was built universal\nlipo -info src/highlight | grep -q i386 || exit 1\nlipo -info src/highlight | grep -q x86_64 || exit 1\nmake \\\n\tDESTDIR=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH \\\n\tPREFIX=/highlight/ \\\n\tinstall\n\n";
-			showEnvVarsInLog = 0;
+			shellScript = "set err_exit\ncd $PROJECT_DIR/highlight\nX=\"-arch i386 -arch x86_64 -isysroot $SDKROOT -mmacosx-version-min=$MACOSX_DEPLOYMENT_TARGET\"\nexport CFLAGS=$X\nexport LDFLAGS=$X\nmake -j 2\n# Make sure it was built universal\nlipo -info src/highlight | grep -q i386 || exit 1\nlipo -info src/highlight | grep -q x86_64 || exit 1\nmake \\\n\tDESTDIR=$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH \\\n\tPREFIX=/highlight/ \\\n\tinstall\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -361,10 +360,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(DEVELOPER_DIR)/SDKs/MacOSX10.5.sdk/System/Library/Frameworks\"",
-				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -382,10 +377,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(DEVELOPER_DIR)/SDKs/MacOSX10.5.sdk/System/Library/Frameworks\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
@@ -401,8 +392,9 @@
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -414,8 +406,9 @@
 				CURRENT_PROJECT_VERSION = 2.0.2;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
