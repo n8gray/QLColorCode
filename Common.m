@@ -64,7 +64,7 @@ NSData *colorizeURL(CFBundleRef bundle, CFURLRef url, int *status, int thumbnail
     n8log(@"url = %@", url);
     NSString *targetEsc = pathOfURL(url);
     n8log(@"targetEsc = %@", targetEsc);
-    
+
     // Set up preferences
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *env = [NSMutableDictionary dictionaryWithDictionary:
@@ -81,10 +81,16 @@ NSData *colorizeURL(CFBundleRef bundle, CFURLRef url, int *status, int thumbnail
                                    @"UTF-8", @"textEncoding", 
                                    @"UTF-8", @"webkitTextEncoding", nil]];
     [env addEntriesFromDictionary:[defaults persistentDomainForName:myDomain]];
-    
+
+    NSMutableString *targetEscaped = [NSMutableString stringWithString:targetEsc];
+    [targetEscaped replaceOccurrencesOfString:@"'"
+                   withString:@"'\\''"
+                   options:0
+                   range:NSMakeRange(0, [targetEscaped length])];
+
     NSString *cmd = [NSString stringWithFormat:
                      @"'%@/colorize.sh' '%@' '%@' %s", 
-                     rsrcEsc, rsrcEsc, targetEsc, thumbnail ? "1" : "0"];
+                     rsrcEsc, rsrcEsc, targetEscaped , thumbnail ? "1" : "0"];
     n8log(@"cmd = %@", cmd);
     
     output = runTask(cmd, env, status);
